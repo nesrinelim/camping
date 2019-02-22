@@ -12,7 +12,7 @@ class Slider extends Component {
             <Carousel>
               <Carousel.Item>
                   <img
-                    className="d-block w-95 justify-content-md-center"
+                    className="d-block w-100 justify-content-md-center"
                     src="https://images.pexels.com/photos/699558/pexels-photo-699558.jpeg?dl&fit=crop&crop=entropy&w=817&h=425"
                     alt="First slide"
                   />
