@@ -3,6 +3,7 @@ import {Container} from 'react-bootstrap'
 
 import NavbarMenu from './navbar_menu'
 import Slider from './slider';
+
 class Home extends Component {
     constructor(props) {
         super(props);
@@ -12,8 +13,8 @@ class Home extends Component {
         return ( <div>
             <Container>
                 <NavbarMenu/> 
-                
                 <Slider/>
+            
             </Container>
              
         </div> );
