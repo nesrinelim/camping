@@ -2,3 +2,66 @@
   text-align: center;
 }
 
+.story{
+  font-family: 'Gloria Hallelujah', cursive;
+
+}
+.image1{
+  position: relative;
+  right: 33%;
+  margin-bottom: 3%
+}
+.image2{
+  position: absolute;
+  top: 126%;
+  left: 17%;
+}
+.filler1{
+  background-image: url(https://static.wixstatic.com/media/ff6bf6_bb782bbc35df450eae9cfefdce1bd926.jpg/v1/fill/w_518,h_346,al_c,q_80,usm_0.66_1.00_0.01/ff6bf6_bb782bbc35df450eae9cfefdce1bd926.jpg);
+   background-size: cover; 
+   height: 355px; 
+   width: 185px;
+}
+.filler2{
+ background-image: url(https://static.wixstatic.com/media/ff6bf6_b0e66c48f399427abca1bda08e367233.jpg/v1/fill/w_522,h_355,al_c,q_80,usm_0.66_1.00_0.01/ff6bf6_b0e66c48f399427abca1bda08e367233.jpg); 
+ background-size: cover;
+  height: 355px; 
+  width: 185px;
+}
+.filler3{
+ background-image: url(https://static.wixstatic.com/media/ff6bf6_ac5e72c785ac4248ac222fba25c0f4e4.jpg/v1/fill/w_520,h_355,al_c,q_80,usm_0.66_1.00_0.01/ff6bf6_ac5e72c785ac4248ac222fba25c0f4e4.jpg); 
+  background-size: cover;
+   height: 355px;
+    width: 185px;
+}
+.filler4{
+background-image: url(https://static.wixstatic.com/media/ff6bf6_0c8b4199d7a645b697b31fd87e52272b.jpg/v1/fill/w_519,h_355,al_c,q_80,usm_0.66_1.00_0.01/ff6bf6_0c8b4199d7a645b697b31fd87e52272b.jpg);
+ background-size: cover; 
+ height: 355px; width: 185px;
+}
+.filler5{
+  background-image: url(https://static.wixstatic.com/media/ff6bf6_41cf2c432c3e43138924cc0ce7d238a2.jpg/v1/fill/w_519,h_355,al_c,q_80,usm_0.66_1.00_0.01/ff6bf6_41cf2c432c3e43138924cc0ce7d238a2.jpg);
+   background-size: cover;
+    height: 355px;
+     width: 185px
+}
+.filler6{
+  background-image: url(https://static.wixstatic.com/media/ff6bf6_a3546a645a0f44b5a23837ad6ba25448.jpg/v1/fill/w_518,h_355,al_c,q_80,usm_0.66_1.00_0.01/ff6bf6_a3546a645a0f44b5a23837ad6ba25448.jpg);
+   background-size: cover; 
+   height: 355px; 
+   width: 185px
+}
+
+
+.filler1:hover,.filler2:hover,.filler3:hover,.filler4:hover,.filler5:hover,.filler6:hover{
+   width: 800px;
+   transition: 0.5s linear;
+   transition: 0.5s ease-out
+}
+
+@media screen and (max-width:768px){
+  .image2{
+    top: 207%;
+    width: 70%;
+  }
+}
