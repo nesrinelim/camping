@@ -3,6 +3,9 @@ import {Container} from 'react-bootstrap'
 
 import NavbarMenu from './navbar_menu'
 import Slider from './slider';
+import Story from './story'
+import Article from './article'
+import Footer from './footer'
 
 class Home extends Component {
     constructor(props) {
@@ -14,6 +17,10 @@ class Home extends Component {
             <Container>
                 <NavbarMenu/> 
                 <Slider/>
+                <Story/>
+                <Article/>
+                <Footer />
+                
             
             </Container>
              
