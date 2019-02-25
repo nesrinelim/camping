@@ -10,7 +10,7 @@ class NavbarMenu extends Component {
     }
     render() { 
         return ( <div>
-     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" >
+     <Navbar className="navbar" bg='li' collapseOnSelect expand="lg"  sticky="top">
             <Navbar.Brand href="#home">Navbar</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
@@ -21,7 +21,7 @@ class NavbarMenu extends Component {
                     <Nav.Link href="#pricing">CONTACT US</Nav.Link>
             </Nav>
             <Nav >
-                    <Button variant="outline-light">
+                    <Button variant="dark">
                         <Link to='/signin' style={{color:'white'}}>SIGN IN </Link> 
                     </Button>
             </Nav>   
