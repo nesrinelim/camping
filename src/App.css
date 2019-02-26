@@ -12,6 +12,8 @@
 .aboutus{
   font-family: "'Gloria Hallelujah', cursive"
 }
+.background-conatiner-global{
+background-image:url(https://images.pexels.com/photos/1374064/pexels-photo-1374064.jpeg?cs=srgb&dl=adventure-cliff-daylight-1374064.jpg&fm=jpg)}
 .image1{
   position: relative;
   right: 33%;
@@ -92,4 +94,8 @@ background-image: url(https://static.wixstatic.com/media/ff6bf6_0c8b4199d7a645b6
     top: 207%;
     width: 70%;
   }
+}
+.video-container{
+  width:70%;
+  margin-left: 15%
 }
