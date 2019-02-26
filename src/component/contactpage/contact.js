@@ -27,7 +27,8 @@ class Contact extends Component {
     </p>
     </Col>
     <Col>
-        <SimpleMap/>
+    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3233.747027638517!2d10.605208225575494!3d35.85520610716694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd8b92d29b7747%3A0xa2098951f47d6e46!2sgo+my+code+sousse!5e0!3m2!1sfr!2stn!4v1546795819055" width="450" height="450" frameborder="0"  allowfullscreen></iframe>
+        {/* <SimpleMap/> */}
         </Col>
 </Row>
 
