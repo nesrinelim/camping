@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Col,Row} from 'react-bootstrap'
-import {Link}  from 'react-router-dom'
 
 class Footer extends Component {
     constructor(props) {
@@ -9,7 +8,7 @@ class Footer extends Component {
     }
     render() { 
         return (<div>
-             <div style={{backgroundColor:'#212121', color:'gray'}}>
+             <div style={{backgroundColor:'#535151', color:'white'}}>
             <Row>
               
               <Col>
@@ -47,18 +46,7 @@ class Footer extends Component {
              </div>
                
               </Col>
-              {/* <Col>
-              <hr  style={{width: "60px" , backgroundColor:'white'}} />
-              <h6 style={{color:'white'}}>OUR SERVICES</h6>
-              <hr  style={{width: "60px" , backgroundColor:'white'}} />
-               <ul style={{listStyleType:'none',textAlign: "start",textAlign: "start"}}>
-                  <li >Camping </li>
-                  <li>Biking </li>
-                  <li>Riding </li>
-                  <li>Hiking </li>
-               </ul>
-              </Col> */}
-              
+             
               <Col>
                <br/>
                <h6>Follow Us</h6><br/>
