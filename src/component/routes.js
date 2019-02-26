@@ -5,6 +5,7 @@ import Footer from './homepage/footer'
 
 import Home from './homepage/home'
 import Aboutus from './aboutuspage/aboutus';
+import Contact from './contactpage/contact'
 import Login  from './loginpage/login'
 class Routes extends Component {
     constructor(props) {
@@ -16,6 +17,7 @@ class Routes extends Component {
              <Route  path="/" component={NavbarMenu} />
             <Route exact path="/" component={Home} />
             <Route exact path="/aboutus" component={Aboutus} />
+            <Route exact path="/contact" component={Contact} />
             <Route exct path="/login" component={Login}/>
             <Route  path="/" component={Footer} />
         </div> );
