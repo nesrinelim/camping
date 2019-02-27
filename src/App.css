@@ -12,6 +12,9 @@
 .aboutus{
   font-family: "'Gloria Hallelujah', cursive"
 }
+.card {
+  margin-top: 36px;
+}
 .background-conatiner-global{
 background-image:url(https://images.pexels.com/photos/1374064/pexels-photo-1374064.jpeg?cs=srgb&dl=adventure-cliff-daylight-1374064.jpg&fm=jpg)}
 .image1{
