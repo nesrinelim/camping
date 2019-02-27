@@ -26,6 +26,10 @@ class Login extends React.Component {
     return (
       <div>
         <br/>
+        
+<img src="https://static.wixstatic.com/media/ff6bf6_6cb3f5967ada4c26a9401daa5cd39d2f.png/v1/fill/w_155,h_58,al_c,q_80,usm_0.66_1.00_0.01/ff6bf6_6cb3f5967ada4c26a9401daa5cd39d2f.webp"></img>
+<h1 style={{ fontFamily: "'La Belle Aurore',cursive"}}>Login </h1>
+<br/>
         <Container>
           <Row>
             <Col>
@@ -80,7 +84,8 @@ class Login extends React.Component {
               id="defaultFormRegisterConfirmEx3"
               className="form-control"
               name="email"
-              placeholder="Your Email address"/>
+              placeholder="Your Email address"
+              required/>
               {/* <label
                 htmlFor="defaultFormRegisterNameEx"
                 className="grey-text"
@@ -147,7 +152,7 @@ class Login extends React.Component {
                     className="btn-block z-depth-1"
                     type="submit"
                   >
-                    Sign in
+                    Sign up
                   </MDBBtn>
                 </div>
               </MDBRow>
@@ -155,7 +160,7 @@ class Login extends React.Component {
                 <p className="font-small white-text d-flex justify-content-end">
                   Have an account?
                   <a href="#!" className="green-text ml-1 font-weight-bold">
-                    Log in
+                    sign in
                   </a>
                 </p>
               </MDBCol>
@@ -204,7 +209,8 @@ class Login extends React.Component {
               id="defaultFormRegisterConfirmEx3"
               className="form-control"
               name="email_"
-              placeholder="Your Email address"/>
+              placeholder="Your Email address"
+              required/>
              
 
              
