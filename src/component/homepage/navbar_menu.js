@@ -17,7 +17,7 @@ class NavbarMenu extends Component {
             <Nav className="mr-auto">
                     <Nav.Link href="/">HOME</Nav.Link>
                     <Nav.Link href="/aboutus">ABOUT US</Nav.Link>
-                    <Nav.Link href="#features">ACTIVITIES</Nav.Link>
+                    <Nav.Link href="/activity">ACTIVITIES</Nav.Link>
                     <Nav.Link href="/contact">CONTACT US</Nav.Link>
             </Nav>
             <Nav >

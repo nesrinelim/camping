@@ -6,6 +6,7 @@ import Footer from './homepage/footer'
 import Home from './homepage/home'
 import Aboutus from './aboutuspage/aboutus';
 import Contact from './contactpage/contact'
+import Listactivity from './activitiespage/listactivity'
 import Login  from './loginpage/login'
 class Routes extends Component {
     constructor(props) {
@@ -18,6 +19,7 @@ class Routes extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/aboutus" component={Aboutus} />
             <Route exact path="/contact" component={Contact} />
+            <Route exact path="/activity" component={Listactivity} />
             <Route exct path="/login" component={Login}/>
             <Route  path="/" component={Footer} />
         </div> );
