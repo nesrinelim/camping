@@ -16,7 +16,10 @@
   margin-top: 36px;
 }
 .background-conatiner-global{
-background-image:url(https://images.pexels.com/photos/1374064/pexels-photo-1374064.jpeg?cs=srgb&dl=adventure-cliff-daylight-1374064.jpg&fm=jpg)}
+  /* background-image:url(https://images.pexels.com/photos/176381/pexels-photo-176381.jpeg?dl&fit=crop&crop=entropy&w=1920&h=1280); */
+  background-image:url(./component/aboutuspage/img/pexels-photo-176381\ \(3\).jpeg);
+  background-attachment: fixed;
+}
 .image1{
   position: relative;
   right: 33%;
@@ -92,13 +95,35 @@ background-image: url(https://static.wixstatic.com/media/ff6bf6_0c8b4199d7a645b6
     justify-content: space-around;
     align-items: center;
   }
+  .video-container{
+    width:70%;
+    margin-left: 15%
+  }
+  /* .option_filtr{
+    background-color: #e0e0e0;
+
+  }
+  .option{
+    border-right: 2px solid;
+    border-right-style: groove;
+  } */
 @media screen and (max-width:768px){
   .image2{
     top: 207%;
     width: 70%;
   }
-}
-.video-container{
-  width:70%;
-  margin-left: 15%
+  .cart{
+    width: 18rem!important;
+  }
+  .card-image{
+    width: 20rem!important;
+  }
+  .map{
+    width: 90vw;
+  }
+  .parg_contact{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
 }

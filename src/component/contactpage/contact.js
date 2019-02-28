@@ -13,7 +13,7 @@ class Contact extends Component {
 <img src="https://static.wixstatic.com/media/ff6bf6_6cb3f5967ada4c26a9401daa5cd39d2f.png/v1/fill/w_155,h_58,al_c,q_80,usm_0.66_1.00_0.01/ff6bf6_6cb3f5967ada4c26a9401daa5cd39d2f.webp"></img>
 <h1 style={{ fontFamily: "'La Belle Aurore',cursive"}}>Contact</h1>
 <Row>
-    <Col>
+    <Col className="parg_contact">
     <p style={{width:"50%",marginTop:"3%"}}>For general enquiries and further information, please contact us:<br/> 500 Terry Francois Street San Francisco, CA  94158
    Tel: 123-456-7890 Email: info@mysite.com</p>
     </Col>

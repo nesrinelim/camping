@@ -215,7 +215,7 @@ class Login extends React.Component {
 
              
 
-              <MDBInput label="Your password" group type="password" validate 
+              <MDBInput label="Your password" group  validate 
               value={this.state.password_}
               name="password_"
               onChange={this.changeHandler}
@@ -245,7 +245,7 @@ class Login extends React.Component {
         </MDBCol>
       </MDBRow>
         </form>
-        
+        <br/>
         </Col>
         </Row>
         </Container>
