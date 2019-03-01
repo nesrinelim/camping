@@ -6,7 +6,7 @@ class Articles extends Component {
         this.state = {  }
     }
     render() { 
-        return ( <div style={{display:'flex'}}>
+        return ( <div  style={{display:'flex'}}>
          
             <div className="filler1" ></div>
             <div className="filler2" ></div>
