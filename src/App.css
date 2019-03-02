@@ -2,10 +2,18 @@
   text-align: center;
 }
 .navbar{
-  background-color:  0 0;
-  
+  background-color: rgba(253, 253, 253, 0.945);
+  /* background-color:white */
+ 
 }
-
+.navbar-nav .nav-link {
+  color: black!important;
+  height: 36px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 0;
+  font-family: Poppins;
+}
 .story{
   font-family: 'Gloria Hallelujah', cursive;
 
@@ -13,9 +21,15 @@
 .aboutus{
   font-family: "'Gloria Hallelujah', cursive"
 }
+/* card */
 .card {
   margin-top: 36px;
 }
+.imageact:hover{
+  transform: scale(1.2);
+  transition: all 2s ease-in-out;
+}
+/* card */
 .background-conatiner-global{
   /* background-image:url(https://images.pexels.com/photos/176381/pexels-photo-176381.jpeg?dl&fit=crop&crop=entropy&w=1920&h=1280); */
   background-image:url(./component/aboutuspage/img/pexels-photo-176381\ \(3\).jpeg);
@@ -120,6 +134,95 @@ background-image: url(https://static.wixstatic.com/media/ff6bf6_0c8b4199d7a645b6
      height: 360px;
     background-position: center;
   }
+  .md-form label{
+    color: rgb(209, 206, 206)!important
+  }
+  .img-fluid{
+    height: 12rem!important;
+  }
+  /* hover img activities */
+  .hovereffect {
+    width: 100%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    cursor: default;
+  }
+  
+  .hovereffect .overlay {
+    position: absolute;
+    overflow: hidden;
+    width: 80%;
+    height: 60%;
+    left: 10%;
+    top: 10%;
+    border-bottom: 1px solid #FFF;
+    border-top: 1px solid #FFF;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: scale(0,1);
+    -ms-transform: scale(0,1);
+    transform: scale(0,1);
+  }
+  
+  .hovereffect:hover .overlay {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  
+  .hovereffect img {
+    display: block;
+    position: relative;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
+  
+  .hovereffect:hover img {
+    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="0.6" /><feFuncG type="linear" slope="0.6" /><feFuncB type="linear" slope="0.6" /></feComponentTransfer></filter></svg>#filter');
+    filter: brightness(0.6);
+    -webkit-filter: brightness(0.6);
+  }
+  
+  .hovereffect h2 {
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    font-size: 17px;
+    background-color: transparent;
+    color: #FFF;
+    padding: 1em 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: translate3d(0,-100%,0);
+    transform: translate3d(0,-100%,0);
+  }
+  
+  .hovereffect a, .hovereffect p {
+    color: #FFF;
+    padding: 1em 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: translate3d(0,100%,0);
+    transform: translate3d(0,100%,0);
+  }
+  
+  .hovereffect:hover a, .hovereffect:hover p, .hovereffect:hover h2 {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+  }
+  /* hover img activities */
+
 @media screen and (max-width:768px){
   .image_slide{
     height: auto;

@@ -16,6 +16,7 @@ class Routes extends Component {
     render() { 
         return ( <div className="background-conatiner-global">
              <Route  path="/" component={NavbarMenu} />
+             <br/> <br/>
             <Route exact path="/" component={Home} />
             <Route exact path="/aboutus" component={Aboutus} />
             <Route exact path="/contact" component={Contact} />

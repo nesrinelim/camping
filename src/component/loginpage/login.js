@@ -209,8 +209,8 @@ class Login extends React.Component {
               id="defaultFormRegisterConfirmEx3"
               className="form-control"
               name="email_"
-              placeholder="Your Email address"
-              required/>
+              placeholder="Your Email address" style={{color:"white"}}
+              required />
              
 
              

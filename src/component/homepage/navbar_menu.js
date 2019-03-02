@@ -10,21 +10,19 @@ class NavbarMenu extends Component {
     }
     render() { 
         return ( <div>
-     <Navbar className="navbar" bg='light' collapseOnSelect expand="lg"  sticky="top">
+     <Navbar className="navbar" collapseOnSelect expand="lg"  fixed="top">
             <Navbar.Brand href="#home">Navbar</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="mr-auto">
+            <Nav className="ml-auto">
+                
                     <Nav.Link href="/">HOME</Nav.Link>
                     <Nav.Link href="/aboutus">ABOUT US</Nav.Link>
                     <Nav.Link href="/activity">ACTIVITIES</Nav.Link>
                     <Nav.Link href="/contact">CONTACT US</Nav.Link>
+                    <Nav.Link to="/login" >LOGIN </Nav.Link> 
             </Nav>
-            <Nav >
-                    <Button variant="grey">
-                        <Link to='/login' style={{color:'white'}}>LOG IN </Link> 
-                    </Button>
-            </Nav>   
+              
             </Navbar.Collapse>     
      </Navbar>
      
