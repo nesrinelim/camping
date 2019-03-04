@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Nav,Button,Navbar} from 'react-bootstrap';
+import { Nav,Button,Navbar,Container} from 'react-bootstrap';
 import {Link} from 'react-router-dom'
 
 
@@ -9,8 +9,9 @@ class NavbarMenu extends Component {
         this.state = {  }
     }
     render() { 
-        return ( <div>
+        return ( 
      <Navbar className="navbar" collapseOnSelect expand="lg"  fixed="top">
+     <Container>
             <Navbar.Brand href="#home">Navbar</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
@@ -23,10 +24,11 @@ class NavbarMenu extends Component {
                     <Nav.Link to="/login" >LOGIN </Nav.Link> 
             </Nav>
               
-            </Navbar.Collapse>     
+            </Navbar.Collapse>  
+            </Container>   
      </Navbar>
      
-        </div> );
+     );
     }
 }
  

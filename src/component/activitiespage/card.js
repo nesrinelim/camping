@@ -19,13 +19,15 @@ const CardExample = (props) => {
 				</p>
             </div>
     </div>
+
     </div>
+    <label style={{fontSize:"12px",position:"absolute",    top: "47%" , right:" 3%"}} > <i class="material-icons" style={{fontSize:"8px"}} >place</i> {props.item.position}</label>
+
         {/* <MDBCardImage className="img-fluid "  src={props.item.image} waves /> */}
 
         
-        <MDBCardBody>
+        <MDBCardBody style={{marginTop:"-15%"}}>
        
-          <p style={{fontSize:"12px",position:"absolute",    top: "44%" , right:" 3%"}} > <i class="material-icons" style={{fontSize:"8px"}} >place</i> {props.item.position}</p>
           <MDBCardTitle>{props.item.title}</MDBCardTitle>
           <MDBCardText>
           {props.item.descriptif}
