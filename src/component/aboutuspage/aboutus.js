@@ -11,12 +11,12 @@ class Aboutus extends Component {
           
            
                 
-          <Container style={{width:'70%', height:'auto',alignItems: "center",display: "flex",flexDirection: "Column"}}>
+          <Container className="container-aboutus" style={{width:'70vw', height:'auto',alignItems: "center",display: "flex",flexDirection: "Column"}}>
           <br/>
              <img src="https://static.wixstatic.com/media/ff6bf6_6cb3f5967ada4c26a9401daa5cd39d2f.png/v1/fill/w_155,h_58,al_c,q_80,usm_0.66_1.00_0.01/ff6bf6_6cb3f5967ada4c26a9401daa5cd39d2f.webp"></img>
              
            <h1 style={{ fontFamily: "'La Belle Aurore',cursive"}}>Our Strory</h1>
-          <Container style={{width: "70%"}}>
+          <Container className="paragraph-aboutus" style={{width: "50vw"}}>
            <p style={{ fontFamily: "'Gloria Hallelujah', cursive"}}>
     I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell story and let your users know a little more about you.
 

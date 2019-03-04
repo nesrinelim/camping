@@ -52,7 +52,7 @@ class Login extends React.Component {
               <div className="text-center">
                 <h3 className="white-text mb-5 mt-4 font-weight-bold">
                   <strong>SIGN</strong>
-                  <a href="#!" className="green-text font-weight-bold">
+                  <a href="#!" className="pink-text font-weight-bold">
                     <strong> UP</strong>
                   </a>
                 </h3>
@@ -146,7 +146,7 @@ class Login extends React.Component {
               <MDBRow className="d-flex align-items-center mb-4">
                 <div className="text-center mb-3 col-md-12">
                   <MDBBtn
-                    color="success"
+                    color="pink"
                     rounded
                     
                     className="btn-block z-depth-1"
@@ -159,7 +159,7 @@ class Login extends React.Component {
               <MDBCol md="12">
                 <p className="font-small white-text d-flex justify-content-end">
                   Have an account?
-                  <a href="#!" className="green-text ml-1 font-weight-bold">
+                  <a href="#!" className="pink-text ml-1 font-weight-bold">
                     sign in
                   </a>
                 </p>
@@ -193,7 +193,7 @@ class Login extends React.Component {
               <div className="text-center">
                 <h3 className="white-text mb-5 mt-4 font-weight-bold">
                   <strong>SIGN</strong>
-                  <a href="#!" className="green-text font-weight-bold">
+                  <a href="#!" className="pink-text font-weight-bold">
                     <strong> IN</strong>
                   </a>
                 </h3>
@@ -229,7 +229,7 @@ class Login extends React.Component {
               <MDBRow className="d-flex align-items-center mb-4">
                 <div className="text-center mb-3 col-md-12">
                   <MDBBtn
-                    color="success"
+                    color="pink"
                     rounded
                     
                     className="btn-block z-depth-1"

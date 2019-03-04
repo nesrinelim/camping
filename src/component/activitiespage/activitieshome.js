@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Container,Col,Row} from 'react-bootstrap'
 import {connect} from 'react-redux'
 
-import Header from './region_filtr'
+import RegionFilter from './region_filtr'
 import Listactivity from './listactivity';
 
 
@@ -14,7 +14,7 @@ class Homeactivities extends Component {
    
     render() { 
         return ( <div style={{backgroundColor:'white'}}>
-            <Header/>
+            <RegionFilter/>
             <Container>
             
              <Row className="option_filtr">

@@ -12,7 +12,7 @@ class NavbarMenu extends Component {
         return ( 
      <Navbar className="navbar" collapseOnSelect expand="lg"  fixed="top">
      <Container>
-            <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+            <Navbar.Brand href="#home" style={{color:"purple",fontSize:"30px",fontWeight:"bold"}}>Farhoud.tn</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ml-auto">
@@ -21,7 +21,7 @@ class NavbarMenu extends Component {
                     <Nav.Link href="/aboutus">ABOUT US</Nav.Link>
                     <Nav.Link href="/activity">ACTIVITIES</Nav.Link>
                     <Nav.Link href="/contact">CONTACT US</Nav.Link>
-                    <Nav.Link to="/login" >LOGIN </Nav.Link> 
+                    <Nav.Link href="/login" >LOGIN </Nav.Link> 
             </Nav>
               
             </Navbar.Collapse>  
