@@ -6,7 +6,7 @@ import Slider from './slider';
 import Story from './story'
 import Article from './article'
 import Feedback from './feedback';
-
+import Comment from './comment'
 
 class Home extends Component {
     constructor(props) {
@@ -21,7 +21,7 @@ class Home extends Component {
                 <Story/>
                 <Article/>
                 <Feedback/>
-                
+                <Comment/>
             
             </Container>
              
