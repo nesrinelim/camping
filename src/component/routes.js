@@ -9,6 +9,7 @@ import Contact from './contactpage/contact'
 import ContactPage from './contactpage/contactnew'
 import Homeactivities from './activitiespage/activitieshome'
 import Login  from './loginpage/login'
+import Signup from './loginpage/signup'
 class Routes extends Component {
     constructor(props) {
         super(props);
@@ -23,6 +24,7 @@ class Routes extends Component {
             <Route exact path="/contact" component={ContactPage} />
             <Route exact path="/activity" component={Homeactivities} />
             <Route exct path="/login" component={Login}/>
+            <Route exct path="/signup" component={Signup}/>
             </div>
             <Route  path="/" component={Footer} />
         </div> );

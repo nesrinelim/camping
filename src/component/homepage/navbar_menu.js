@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Nav,Button,Navbar,Container} from 'react-bootstrap';
-import {Link} from 'react-router-dom'
+
 
 
 class NavbarMenu extends Component {
@@ -21,7 +21,7 @@ class NavbarMenu extends Component {
                     <Nav.Link href="/aboutus">ABOUT US</Nav.Link>
                     <Nav.Link href="/activity">ACTIVITIES</Nav.Link>
                     <Nav.Link href="/contact">CONTACT US</Nav.Link>
-                    <Nav.Link href="/login" >LOGIN </Nav.Link> 
+                    <Nav.Link href="/login" >SIGN IN </Nav.Link> 
             </Nav>
               
             </Navbar.Collapse>  

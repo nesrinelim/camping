@@ -5,6 +5,7 @@ import {Container} from 'react-bootstrap'
 import Slider from './slider';
 import Story from './story'
 import Article from './article'
+import Feedback from './feedback';
 
 
 class Home extends Component {
@@ -19,7 +20,7 @@ class Home extends Component {
                 <Slider/>
                 <Story/>
                 <Article/>
-                
+                <Feedback/>
                 
             
             </Container>
