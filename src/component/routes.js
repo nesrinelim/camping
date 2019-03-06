@@ -10,13 +10,14 @@ import ContactPage from './contactpage/contactnew'
 import Homeactivities from './activitiespage/activitieshome'
 import Login  from './loginpage/login'
 import Signup from './loginpage/signup'
-import DashboardPage from '../component/admin/components/pages/DashboardPage'
+import Feedback from './homepage/feedback'
 class Routes extends Component {
     constructor(props) {
         super(props);
         this.state = {  }
     }
     render() { 
+        
         return ( <div className="background-conatiner-global">
             
          <div style={{paddingTop:"5%"}}>
@@ -27,7 +28,7 @@ class Routes extends Component {
             <Route exact path="/activity" component={Homeactivities} />
             <Route exct path="/login" component={Login}/>
             <Route exct path="/signup" component={Signup}/>
-            <Route exct path="/admin" component={DashboardPage}/>
+            <Route exct path="/feedback" component={Feedback}/>
             <Route  path="/" component={Footer} />
             </div>
             
