@@ -10,7 +10,8 @@ import ContactPage from './contactpage/contactnew'
 import Homeactivities from './activitiespage/activitieshome'
 import Login  from './loginpage/login'
 import Signup from './loginpage/signup'
-import DashboardPage from '../component/admin/components/pages/DashboardPage'
+import MenuExampleHeaderVertical from './Admin/sidenavbar'
+import MenuExamplePointing from './Admin/header'
 class Routes extends Component {
     constructor(props) {
         super(props);
@@ -20,15 +21,17 @@ class Routes extends Component {
         return ( <div className="background-conatiner-global">
             
          <div style={{paddingTop:"5%"}}>
-            <Route  path="/" component={NavbarMenu} />
+            {/* <Route  path="/" component={NavbarMenu} /> */}
             <Route exact path="/" component={Home} />
             <Route exact path="/aboutus" component={Aboutus} />
             <Route exact path="/contact" component={ContactPage} />
             <Route exact path="/activity" component={Homeactivities} />
             <Route exct path="/login" component={Login}/>
             <Route exct path="/signup" component={Signup}/>
-            <Route exct path="/admin" component={DashboardPage}/>
-            <Route  path="/" component={Footer} />
+            <Route exct path="/admin1" component=  {MenuExamplePointing}/>
+            <Route exct path="/admin1" component={MenuExampleHeaderVertical}/>
+        
+            {/* <Route  path="/" component={Footer} /> */}
             </div>
             
         </div> );
