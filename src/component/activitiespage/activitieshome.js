@@ -15,6 +15,7 @@ class Homeactivities extends Component {
     render() { 
         return ( <div style={{backgroundColor:'white'}}>
             <RegionFilter/>
+            
             <Container>
             
              <Row className="option_filtr">
@@ -26,7 +27,7 @@ class Homeactivities extends Component {
                 <Col> <img src="https://img.icons8.com/color/52/000000/running.png"/>  <h5 style={{ fontFamily: "'La Belle Aurore',cursive"}}>Running</h5></Col>
                 
                 </Row>
-           
+           <br/>
                 
                 <Listactivity/>
                 </Container>

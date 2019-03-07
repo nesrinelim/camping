@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Nav,Button,Navbar,Container} from 'react-bootstrap';
-
+import {Link}from 'react-router-dom'
 
 
 class NavbarMenu extends Component {
@@ -12,7 +12,7 @@ class NavbarMenu extends Component {
         return ( 
      <Navbar className="navbar" collapseOnSelect expand="lg"  fixed="top">
      <Container>
-            <Navbar.Brand href="#home" style={{color:"purple",fontSize:"30px",fontWeight:"bold"}}>Farhoud.tn</Navbar.Brand>
+            <Navbar.Brand href="#home" style={{color:"#2B3A67",fontSize:"30px",fontWeight:"bold"}}>Farhoud.tn</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ml-auto">
@@ -21,7 +21,10 @@ class NavbarMenu extends Component {
                     <Nav.Link href="/aboutus">ABOUT US</Nav.Link>
                     <Nav.Link href="/activity">ACTIVITIES</Nav.Link>
                     <Nav.Link href="/contact">CONTACT US</Nav.Link>
-                    <Nav.Link href="/login" >SIGN IN </Nav.Link> 
+                    
+            </Nav>
+            <Nav >
+            <Link to="/login"  style={{color:'pink'}} >SIGN IN </Link> 
             </Nav>
               
             </Navbar.Collapse>  

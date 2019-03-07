@@ -7,7 +7,7 @@ class RegionFilter extends Component {
         this.state = {  }
     }
     render() { 
-        return ( <div className="header_filtr" style={{height:"60vh", backgroundImage:'url(https://images.pexels.com/photos/803226/pexels-photo-803226.jpeg?dl&fit=crop&crop=entropy&w=1320&h=)', alignItems: "center", display: "flex", flexDirection: "column",justifyContent:"center"}}>
+        return ( <div className="header_filtr" style={{height:"60vh", backgroundImage:'url(https://images.pexels.com/photos/239520/pexels-photo-239520.jpeg?dl&fit=crop&crop=entropy&w=1500&h=851)', alignItems: "center", display: "flex", flexDirection: "column",justifyContent:"center"}}>
        
       <select aria-label="Régions" class="form-control" style={{height:"40px",borderRadius:"0",width:"300px",fontFamily:"Poppins",color:"#000000"}}>
             <option disabled="" value="1" style={{color:"#555555"}}>Sélectionnez votre région...</option>

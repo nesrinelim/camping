@@ -2,10 +2,11 @@
   text-align: center;
 }
 .navbar{
-  background-color: rgba(45, 27, 49, 0.3);
+  background-color:    rgba(255, 255, 242, 0.7);
   /* background-color:white */
  
 }
+
 .btn-highlight {
   background-color: #000;
   border-color: #000;
@@ -78,7 +79,7 @@
 }
 .image2{
   position: absolute;
-  top:  829px;;
+  top:  769px;;
   left: 17%;
 }
 .filler1{
@@ -161,7 +162,9 @@ background-image: url(https://static.wixstatic.com/media/ff6bf6_0c8b4199d7a645b6
   } 
   .opt{
     background-color: #2c2a2a;
-    color: white
+    color: white;
+    padding-top: 2%;
+    padding-bottom: 2%;
   }
   .header_filtr{
      margin-bottom: 0px;
@@ -257,7 +260,26 @@ background-image: url(https://static.wixstatic.com/media/ff6bf6_0c8b4199d7a645b6
     transform: translate3d(0,0,0);
   }
   /* hover img activities */
-
+/* up/down descrip */
+.fa-caret-up{
+  position: absolute;
+    top: 35%;
+    left: 56%;
+    z-index: 3;
+}
+.fa-caret-down{
+  position: absolute;
+    top: 57%;
+    left: 56%;
+    z-index: 3;
+}
+.fa-calendar-o{
+  position: absolute;
+  top: 47%;
+  left: 70%;
+  z-index: 3;
+}
+/* up/down descrip */
 @media screen and (max-width:768px){
   .image_slide{
     height: auto;
