@@ -5,6 +5,7 @@ class RegionFilter extends Component {
     constructor(props) {
         super(props);
         this.state = {  }
+
     }
     render() { 
         return ( <div className="header_filtr" style={{height:"60vh", backgroundImage:'url(https://images.pexels.com/photos/239520/pexels-photo-239520.jpeg?dl&fit=crop&crop=entropy&w=1500&h=851)', alignItems: "center", display: "flex", flexDirection: "column",justifyContent:"center"}}>

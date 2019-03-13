@@ -1,62 +1,6 @@
 .App {
   text-align: center;
 }
-.navbar{
-  background-color:    rgba(255, 255, 242, 0.7);
-  /* background-color:white */
- 
-}
-
-.btn-highlight {
-  background-color: #000;
-  border-color: #000;
-  border-radius: 23px;
-  color: #ffffff;
-  padding: 5px 5px!important;
-  width: 55px;
-  position: fixed;
-  top: 60%;
-  right: 2%;
-}
-.btn_comment{
-  background-color: #000;
-  border-color: #000;
-  border-radius: 23px;
-  color: #ffffff;
-  padding: 5px 5px!important;
-  width: 300px;
- 
-}
-.btn_1{
-  position: fixed;
-  top: 45%;
-  right: 2%;
-  transition: 1s ease-in-out
-}
-.btn_2{
-  position: fixed;
-  top: 53%;
-  right: 2%;
-}
-.modal-content {
-  width: 70%!important
-}
-
-.navbar-nav .nav-link {
-  color: black!important;
-  height: 36px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border: 0;
-  font-family: Poppins;
-}
-.story{
-  font-family: 'Gloria Hallelujah', cursive;
-
-}
-.aboutus{
-  font-family: "'Gloria Hallelujah', cursive"
-}
 
 /* card */
 .card {
@@ -72,112 +16,15 @@
   background-image:url(./component/aboutuspage/img/pexels-photo-176381\ \(3\).jpeg);
   background-attachment: fixed;
 }
-.image1{
-  position: relative;
-  right: 33%;
-  margin-bottom: 3%
-}
-.image2{
-  position: absolute;
-  top:  769px;;
-  left: 17%;
-}
-.filler1{
-      transition: 1s ease-out;
-          overflow: hidden;
-      background-position: center;
-  background-image: url(https://static.wixstatic.com/media/ff6bf6_bb782bbc35df450eae9cfefdce1bd926.jpg/v1/fill/w_518,h_346,al_c,q_80,usm_0.66_1.00_0.01/ff6bf6_bb782bbc35df450eae9cfefdce1bd926.jpg);
-   background-size: cover; 
-   height: 355px; 
-   width: 185px;
-}
-.filler2{
-      transition: 1s ease-out;
-          overflow: hidden;
-      background-position: center;
- background-image: url(https://static.wixstatic.com/media/ff6bf6_b0e66c48f399427abca1bda08e367233.jpg/v1/fill/w_522,h_355,al_c,q_80,usm_0.66_1.00_0.01/ff6bf6_b0e66c48f399427abca1bda08e367233.jpg); 
- background-size: cover;
-  height: 355px; 
-  width: 185px;
-}
-.filler3{
-      transition: 1s ease-out;
-          overflow: hidden;
-      background-position: center;
- background-image: url(https://static.wixstatic.com/media/ff6bf6_ac5e72c785ac4248ac222fba25c0f4e4.jpg/v1/fill/w_520,h_355,al_c,q_80,usm_0.66_1.00_0.01/ff6bf6_ac5e72c785ac4248ac222fba25c0f4e4.jpg); 
-  background-size: cover;
-   height: 355px;
-    width: 185px;
-}
-.filler4{
-      transition: 1s ease-out;
-          overflow: hidden;
-      background-position: center;
-background-image: url(https://static.wixstatic.com/media/ff6bf6_0c8b4199d7a645b697b31fd87e52272b.jpg/v1/fill/w_519,h_355,al_c,q_80,usm_0.66_1.00_0.01/ff6bf6_0c8b4199d7a645b697b31fd87e52272b.jpg);
- background-size: cover; 
- height: 355px; width: 185px;
-}
-.filler5{
-      transition: 1s ease-out;
-          overflow: hidden;
-      background-position: center;
-  background-image: url(https://static.wixstatic.com/media/ff6bf6_41cf2c432c3e43138924cc0ce7d238a2.jpg/v1/fill/w_519,h_355,al_c,q_80,usm_0.66_1.00_0.01/ff6bf6_41cf2c432c3e43138924cc0ce7d238a2.jpg);
-   background-size: cover;
-    height: 355px;
-     width: 185px
-}
-.filler6{
-  background-position: center;
-  background-image: url(https://static.wixstatic.com/media/ff6bf6_a3546a645a0f44b5a23837ad6ba25448.jpg/v1/fill/w_518,h_355,al_c,q_80,usm_0.66_1.00_0.01/ff6bf6_a3546a645a0f44b5a23837ad6ba25448.jpg);
-   background-size: cover; 
-   height: 355px; 
-   width: 185px;
-   transition: 1s ease-out;
-}
 
 
-.filler1:hover,.filler2:hover,.filler3:hover,.filler4:hover,.filler5:hover,.filler6:hover{
-   width: 800px;
-  transition: 1s ease-in-out;
-  }
 
-
-  .img_ftr{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
+  
   .video-container{
     width:70%;
     margin-left: 15%
   }
-  .option_filtr{
-    background-color: white;
-    border-radius: 6px
-  }
-  .option{
-    border-right: 2px solid;
-    border-right-style: groove;
-    
-  } 
-  .opt{
-    background-color: #2c2a2a;
-    color: white;
-    padding-top: 2%;
-    padding-bottom: 2%;
-  }
-  .header_filtr{
-     margin-bottom: 0px;
-     background-repeat: no-repeat;
-     height: 360px;
-    background-position: center;
-  }
-  .md-form label{
-    color: rgb(209, 206, 206)!important
-  }
-  .img-fluid{
-    height: 12rem!important;
-  }
+  
   /* hover img activities */
   .hovereffect {
     width: 100%;
@@ -260,50 +107,18 @@ background-image: url(https://static.wixstatic.com/media/ff6bf6_0c8b4199d7a645b6
     transform: translate3d(0,0,0);
   }
   /* hover img activities */
-/* up/down descrip */
-.fa-caret-up{
-  position: absolute;
-    top: 35%;
-    left: 56%;
-    z-index: 3;
-}
-.fa-caret-down{
-  position: absolute;
-    top: 57%;
-    left: 56%;
-    z-index: 3;
-}
-.fa-calendar-o{
-  position: absolute;
-  top: 47%;
-  left: 70%;
-  z-index: 3;
-}
-/* up/down descrip */
+
 @media screen and (max-width:768px){
-  .image_slide{
-    height: auto;
-  }
   
-  .filler1,.filler2,.filler3,.filler4,.filler5,.filler6{
-    height: 45vh;
-  }
-  .image2{
-    top: 1100px;
-    width: 70%;
-  }
-  .cart{
+  /* .cart{
     width: 18rem!important;
   }
   .card-image{
     width: 20rem!important;
-  }
-  .map{
-    width: 90vw;
-  }
-  .parg_contact{
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-  }
+  } */
+  /* card activities */
+  
+  
+  
 }
+

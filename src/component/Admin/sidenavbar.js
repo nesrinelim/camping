@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Menu } from 'semantic-ui-react'
-
+import {Link} from 'react-router-dom'
  class MenuExampleHeaderVertical extends Component {
   handleItemClick = name => this.setState({ activeItem: name })
 
@@ -8,21 +8,32 @@ import { Menu } from 'semantic-ui-react'
     const { activeItem } = this.state || {}
 
     return (
-      <Menu vertical>
+      <Menu vertical style={{position:'absolute'}}>
+      <Menu.Item>
+          <Menu.Header>Profile</Menu.Header>
+          <Menu.Menu>
+           <Link to='/admin1/editprofile'><Menu.Item
+              name='edit profile'
+              active={activeItem === 'edit profile'}
+              onClick={this.handleItemClick}
+            /></Link>
+          </Menu.Menu>
+        </Menu.Item>
+
         <Menu.Item>
           <Menu.Header>Activities</Menu.Header>
 
           <Menu.Menu>
-            <Menu.Item
-              name='addactivity'
-              active={activeItem === 'addactivity'}
+           <Link to='/admin1/add_act'> <Menu.Item
+              name='add activity'
+              active={activeItem === 'add activity'}
               onClick={this.handleItemClick}
-            />
-            <Menu.Item
-              name='editactivity'
-              active={activeItem === 'editactivity'}
+            /></Link>
+            <Link to='/admin1/edit_act'><Menu.Item
+              name='edit activity'
+              active={activeItem === 'edit activity'}
               onClick={this.handleItemClick}
-            />
+            /></Link>
           </Menu.Menu>
         </Menu.Item>
 
@@ -31,13 +42,13 @@ import { Menu } from 'semantic-ui-react'
 
           <Menu.Menu>
             <Menu.Item
-              name='adduser'
-              active={activeItem === 'adduser'}
+              name='add user'
+              active={activeItem === 'add user'}
               onClick={this.handleItemClick}
             />
             <Menu.Item
-              name='edituser'
-              active={activeItem === 'edituser'}
+              name='edit user'
+              active={activeItem === 'edit user'}
               onClick={this.handleItemClick}
             />
             <Menu.Item 
@@ -85,3 +96,33 @@ import { Menu } from 'semantic-ui-react'
   }
 }
 export default MenuExampleHeaderVertical
+
+// class Sidebar extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {  }
+//   }
+//   render() { 
+//     return ( <div>
+//       <ul>
+//         <li>
+//           <Link to='/admin1/add_act'>add activitie</Link>
+//         </li>
+//         <li>
+//           <Link to='/admin1/add_act'>edit activitie</Link>
+//         </li>
+//         <li>
+//           <Link to='/admin1/add_act'>add activitie</Link>
+//         </li>
+//         <li>
+//           <Link to='/admin1/add_act'>add activitie</Link>
+//         </li>
+//         <li>
+//           <Link to='/admin1/add_act'>add activitie</Link>
+//         </li>
+//       </ul>
+//     </div> );
+//   }
+// }
+ 
+// export default Sidebar;

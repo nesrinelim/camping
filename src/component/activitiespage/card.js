@@ -10,20 +10,20 @@ class CardExample  extends Component {
   }
   render() { 
     const {item}=this.props
-    return ( <Link to={`/description/${item.id}`}> <div style={{ width: "18rem" ,color:'black' }}>
-    <div><img src={item.image} width='350rem' height='200rem' /></div>
-    <div style={{textAlign:" start"}}>
-    <label style={{fontSize:"12px",position:"absolute",top: "60%" , left:" 3%"}} > <i class="material-icons" style={{fontSize:"8px"}} >place</i> {item.type}</label>
-    <label style={{fontSize:"12px",position:"absolute",top: "60%" , right:" 3%"}} > <i class="material-icons" style={{fontSize:"8px"}} >place</i> {item.position}</label>
+    return ( <Link to={`/description/${item._id}`}> <div style={{ width: "18rem" ,color:'black' }}>
+    <div ><img className='img_card' src={item.image} width='350rem' height='200rem' /></div>
+    <div style={{textAlign:" start" ,position:"relative" }} >
+    <label className='label1_card' style={{fontSize:"12px",position:"absolute",top: "1%" , left:" 3%"}} > <i class="material-icons" style={{fontSize:"8px"}} >place</i> {item.typeAct}</label>
+    <label className='label2_card' style={{fontSize:"12px",position:"absolute",top: "1%" ,left:"77%"}} > <i class="material-icons" style={{fontSize:"8px"}} >place</i> {item.position}</label>
     <br/>
     <StarRatingComponent 
            name="rate1" 
            starCount={5}
-           value={item.rate}
+           value={3}
          />
       <h4>{item.title}</h4>
-      <h6>{item.descriptif}</h6>
-      <h6>price:{item.price}</h6>
+      <h6>{item.descriptAct}</h6>
+      <h6>price:{item.priceAct}</h6>
 
 
      

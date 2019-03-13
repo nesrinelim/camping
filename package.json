@@ -2,10 +2,15 @@
   "name": "camping-website",
   "version": "0.1.0",
   "private": true,
+  "proxy":"http://localhost:3050",
   "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
     "bootstrap": "^4.3.1",
+    "express": "^4.16.4",
     "google-map-react": "^1.1.2",
     "mdbreact": "^4.11.0",
+    "mongodb": "^3.1.13",
     "react": "^16.8.2",
     "react-bootstrap": "^1.0.0-beta.5",
     "react-dom": "^16.8.2",
@@ -31,5 +36,18 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nesrinelim/camping.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nesrinelim/camping/issues"
+  },
+  "homepage": "https://github.com/nesrinelim/camping#readme"
 }

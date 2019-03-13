@@ -8,10 +8,10 @@ class Liste_description extends Component {
         this.state = {  }
     }
     render() { 
-        
+        console.log()
         return ( <div>
 
-                {(this.props.tab.filter(elt=> elt.id == this.props.match.params.id)).map((elt,index)=> <Item_descript item_desc={elt} key={index} /> )}
+                {(this.props.tab.filter(elt=> elt._id == this.props.match.params._id)).map((elt,index)=> <Item_descript item_desc={elt} key={index} /> )}
                 
                 </div> );
     }

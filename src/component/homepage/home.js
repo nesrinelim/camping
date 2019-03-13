@@ -7,7 +7,7 @@ import Story from './story'
 import Article from './article'
 import Feedback from './feedback';
 import Comment from './comment'
-
+import './style/home.css'
 class Home extends Component {
     constructor(props) {
         super(props);

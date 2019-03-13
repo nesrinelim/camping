@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Route} from 'react-router-dom'
+import {Route,Switch,withRouter} from 'react-router-dom'
 import NavbarMenu from './homepage/navbar_menu'
 import Footer from './homepage/footer'
 
@@ -11,20 +11,31 @@ import Homeactivities from './activitiespage/activitieshome'
 import Login  from './loginpage/login'
 import Signup from './loginpage/signup'
 import Feedback from './homepage/feedback'
-import MenuExampleHeaderVertical from './Admin/sidenavbar'
-import MenuExamplePointing from './Admin/header'
-import Liste_description from './activitiespage/description/liste_description'
+
+
+
+import Add_act_admin from './Admin/activities/add_activ_admin';
+
+import Adminhome from './Admin/adminhome';
+import Editprofile from './Admin/profile/editprofile';
+import Listactivity from './Admin/activities/listactivity_admin';
+import Editact from './Admin/activities/editactiv_admin';
+import item_description from './activitiespage/description/item_description';
+
+
 class Routes extends Component {
     constructor(props) {
         super(props);
         this.state = {  }
     }
+    
     render() { 
-        
-        return ( <div className="background-conatiner-global">
-            
-         <div style={{paddingTop:"5%"}}>
-            <Route  path="/" component={NavbarMenu} />
+        console.log(this.props.location.pathname+'pathname')
+        return ( <Switch>
+       
+        {this.props.location.pathname.indexOf("/admin") == -1 ? 
+        <div className="background-conatiner-global" style={{paddingTop:"5%"}}>
+        <Route  path="/" component={NavbarMenu} />
             <Route exact path="/" component={Home} />
             <Route exact path="/aboutus" component={Aboutus} />
             <Route exact path="/contact" component={ContactPage} />
@@ -32,17 +43,24 @@ class Routes extends Component {
             <Route exct path="/login" component={Login}/>
             <Route exct path="/signup" component={Signup}/>
             <Route exct path="/feedback" component={Feedback}/>
-            <Route exact path='/description/:id' component={Liste_description}/>
+            <Route exact path='/description/:_id' component={item_description}/>
             <Route  path="/" component={Footer} />
-            <Route exct path="/admin1" component=  {MenuExamplePointing}/>
-            <Route exct path="/admin1" component={MenuExampleHeaderVertical}/>
+             </div> : 
+             <div >
+             <Route exct path="/admin1" component={Adminhome}/>
+           
+           
+            <Route exact path="/admin1/add_act" component={Add_act_admin} />
+            <Route exact path="/admin1/editprofile" component={Editprofile} />
+            <Route exact path="/admin1/edit_act" component={Listactivity} />
+            <Route exact path='/admin1/edit/:_id' component={Editact} />
+                  </div>
+                }
+         
             
         
-            {/* <Route  path="/" component={Footer} /> */}
-            </div>
-            
-        </div> );
+        </Switch> );
     }
 }
  
-export default Routes;
+export default withRouter(Routes);

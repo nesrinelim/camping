@@ -1,39 +1,46 @@
 import React, { Component } from 'react';
 import StarRatingComponent from 'react-star-rating-component';
 import { Col,Row, Container ,Button} from 'react-bootstrap';
+import {connect} from 'react-redux'
+
 import CollapsePage from './collapse';
+
+
 class Item_descript extends Component {
     constructor(props) {
         super(props);
         this.state = { numb:1 }
     }
+    componentDidMount(){
+      this.setState({...this.props.tab.filter(el=>el._id === this.props.match.params._id)[0]})
+    }
     render() {
-        const {item_desc} =this.props 
+        
         return ( <div>
             <Container>
                 <Row>
                     <Col>
                         <br/>
                         <br/>
-                       <div > <img src={item_desc.image} width='545px' height= '389px '/></div>
+                       <div > <img className="img_descrip" src={this.state.image} width='545px' height= '389px '/></div>
                    </Col>
                     <Col style={{textAlign:" start"}} >
                         <br/>
                         <br/>
                         {/* <div style={{textAlign:" start", backgroundColor:'white'}} > */}
                     <Row>
-                    <Col> <h3>{item_desc.title}</h3></Col>
+                    <Col> <h3>{this.state.title}</h3></Col>
                     <Col>  <h2> <StarRatingComponent 
                         name="rate1" 
                         starCount={5}
-                        value={item_desc.rate}
+                        value={this.state.rate}
                         /> </h2> </Col>
                     </Row>
-                      <label style={{fontSize:"20px"   }} > <i class="material-icons" style={{fontSize:"70%", color:'rgba(0, 0, 30, 0.3)'}} >place</i> {item_desc.position}</label>
-                      <h6>{item_desc.type}</h6>
-                      <h5>price:{item_desc.price}</h5>
-                        <h5>Notre partener vous propse un {item_desc.type}</h5>
-                        <h5>description : {item_desc.descriptif}</h5>
+                      <label style={{fontSize:"20px"   }} > <i class="material-icons" style={{fontSize:"70%", color:'rgba(0, 0, 30, 0.3)'}} >place</i> {this.state.position}</label>
+                      <h6>{this.state.type}</h6>
+                      <h5>price:{this.state.price}</h5>
+                        <h5>Notre partener vous propse un {this.state.type}</h5>
+                        <h5>description : {this.state.descriptif}</h5>
                         <Button>Maps</Button>
                         <Button>Website</Button>
                         <Button>FB</Button> <br/>
@@ -41,36 +48,36 @@ class Item_descript extends Component {
                    </Col>
         </Row>
         <br/>
-        <Row style={{backgroundColor:'rgba(219, 239, 244, 0.8)', height: '76px' , width: '1141px'}}>
-          <Col>
+        <div className="booking_block" style={{backgroundColor:'rgba(219, 239, 244, 0.8)',position:'relative', height: '76px' , width: '1141px',    display: 'flex',justifyContent:' space-around'}}>
+          {/* <Col> */}
           <div>
             <label>Check In</label> <br/>
-            <input value={item_desc.datein}style={{width: "72%" , padding: "2%"}} ></input>
-            <i class="fa fa-calendar-o" style={{fontSize:"24px"}}></i>
+            <input value={this.state.datein}style={{width: "100%" , padding: "2%"}} ></input>
+            <i class="fa fa-calendar-o calendar1 " style={{fontSize:"24px"}}></i>
           </div>
-          </Col>
-          <Col>
+          {/* </Col> */}
+          {/* <Col> */}
           <div>
             <label>Check Out</label> <br/>
-            <input value={item_desc.dateout}style={{width: "72%" , padding: "2%"}} ></input>
-            <i class="fa fa-calendar-o" style={{fontSize:"24px"}}></i>
+            <input value={this.state.dateout}style={{width: "100%" , padding: "2%"}} ></input>
+            <i class="fa fa-calendar-o calendar2" style={{fontSize:"24px"}}></i>
           </div>
-          </Col>
-          <Col>
+          {/* </Col> */}
+          {/* <Col> */}
           <div>
             <label>Persons</label> <br/>
-            <input value={this.state.numb}style={{width: "32%" , padding: "2%"}} ></input> <i class="fa fa-caret-up" onClick={()=>this.setState(prevState =>({numb : prevState.numb +1}))} style={{fontSize:"24px"}}></i> <i class="fa fa-caret-down" onClick={()=>{ this.state.numb == 0 ? this.setState({numb:0}) :this.setState(prevState =>({numb : prevState.numb -1}))}} style={{fontSize:"24px"}}></i>
+            <input value={this.state.numb}style={{width: "48%" , padding: "2%"}} ></input> <i class="fa fa-caret-up" onClick={()=>this.setState(prevState =>({numb : prevState.numb +1}))} style={{fontSize:"24px"}}></i> <i class="fa fa-caret-down" onClick={()=>{ this.state.numb == 0 ? this.setState({numb:0}) :this.setState(prevState =>({numb : prevState.numb -1}))}} style={{fontSize:"24px"}}></i>
           </div>
-          </Col>
-          <Col>
+          {/* </Col>
+          <Col> */}
           <div>
               <br/>
             <Button>prices and booking</Button>
           </div>
-          </Col>
+          {/* </Col> */}
 
         
-        </Row>
+        </div>
         <br/>
         
         <Row>
@@ -89,5 +96,8 @@ class Item_descript extends Component {
         </div> );
     }
 }
+const mapStateToProps=(state)=>{
+  return {tab : state.reducer_filtr}
+}
  
-export default Item_descript;
+export default connect(mapStateToProps) (Item_descript);
