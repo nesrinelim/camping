@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import {Form,Button, Container} from 'react-bootstrap'
+import {Link} from "react-router-dom"
+import {Form,Button, Container,Col} from 'react-bootstrap'
 import axios from 'axios'
+
 class Add_act_admin extends Component {
     constructor(props) {
         super(props);
@@ -10,7 +12,9 @@ class Add_act_admin extends Component {
                        nbr_pplace:'',
                        image:'',
                        title:'',
+                       eventorganizer:'',
                        position:'',
+                       visiblity:true,
                        datein:'',
                        dateout:''
                         }
@@ -23,36 +27,57 @@ class Add_act_admin extends Component {
     }
     render() { 
         return ( <Container >
-            <Form style={{    width: '78%' , marginLeft: "11%"}}>
-                    <Form.Group controlId="formBasicEmail">
-                        <Form.Label>type of activitie</Form.Label>
-                        <Form.Control name='typeAct' onChange={this.handlechange}  value={this.state.typeAct} type="text" placeholder="Normal text" />
-                        <Form.Label>description</Form.Label>
-                        <Form.Control name='descriptAct' onChange={this.handlechange} value={this.state.descriptAct} type="text" placeholder="Normal text" />
-                        <Form.Label>price</Form.Label>
-                        <Form.Control name='priceAct' onChange={this.handlechange}  value={this.state.priceAct} type="text" placeholder="Normal text" />
-                        <Form.Label>nbr de place</Form.Label>
-                        <Form.Control name='nbr_pplace' onChange={this.handlechange}  value={this.state.nbr_pplace} type="text" placeholder="Normal text" />
-                        <Form.Label>url image</Form.Label>
-                        <Form.Control name='image' onChange={this.handlechange} value={this.state.image} type="text" placeholder="Normal text" />
-                        <Form.Label>title</Form.Label>
-                        <Form.Control name='title' onChange={this.handlechange} value={this.state.title} type="text" placeholder="Normal text" />
-                        <Form.Label>position</Form.Label>
-                        <Form.Control name='position' onChange={this.handlechange} value={this.state.position} type="text" placeholder="Normal text" />
-                        <Form.Label>check in</Form.Label>
-                        <Form.Control name='datein' onChange={this.handlechange} value={this.state.datein} type="text" placeholder="Normal text" />
-                        <Form.Label>check out</Form.Label>
-                        <Form.Control name='dateout' onChange={this.handlechange} value={this.state.dateout} type="text" placeholder="Normal text" />
+    
+            <Form style={{   padding:'50px',background:'url(https://images.pexels.com/photos/1580329/pexels-photo-1580329.jpeg?cs=srgb&dl=boulder-bowl-daylight-1580329.jpg&fm=jpg?dl&fit=crop&crop=entropy&w=640&h=853)', width: '78%' , marginLeft: "20%"}}>
+            <br/>
+            <Form.Group controlId="formBasicEmail" >
+                         
+     <Form.Group as={Col} controlId="formGridActivity">
+      
+      <Form.Control as="select" style={{marginTop:'20px',padding:'5px',width:" 25%",marginLeft: "35%"}}name='typeAct' onChange={this.handlechange}  value={this.state.typeAct}placeholder="TypeOf Activity">
+      <option>TypeOf Activity</option>
+      <option>Hiking</option>
+     <option>Camping</option>
+    <option>Boat Trip</option>
+    <option>Horse Riding</option>
+    <option>Running</option>
+      </Form.Control>
+    </Form.Group>
+                         <Form.Control style={{marginTop:'20px',padding:'5px' ,backgroundColor: 'rgba(232, 224, 83, 0.8)'}}name='descriptAct' onChange={this.handlechange} value={this.state.descriptAct} type="text" placeholder="Description Of Activity" />
+                         <Form.Control style={{marginTop:'20px',padding:'5px',backgroundColor: 'rgba(232, 224, 83, 0.8)'}}name='priceAct' onChange={this.handlechange}  value={this.state.priceAct} type="text" placeholder="Price" />
+                         <Form.Control style={{marginTop:'20px',padding:'5px',backgroundColor: 'rgba(232, 224, 83, 0.8)'}}name='nbr_pplace' onChange={this.handlechange}  value={this.state.nbr_pplace} type="text" placeholder="Availble Place" />
+                         <Form.Control style={{marginTop:'20px',padding:'5px',backgroundColor: 'rgba(232, 224, 83, 0.8)'}}name='image' onChange={this.handlechange} value={this.state.image} type="text" placeholder="Picture" />
+                         <Form.Control style={{marginTop:'20px',padding:'5px',backgroundColor: 'rgba(232, 224, 83, 0.8)'}}name='title' onChange={this.handlechange} value={this.state.title} type="text" placeholder="Title" />
+                         <Form.Control style={{marginTop:'20px',padding:'5px',backgroundColor: 'rgba(232, 224, 83, 0.8)'}}name='eventorganizer' onChange={this.handlechange}  type="text" placeholder="Event organizer" />
+                         <Form.Group as={Col} controlId="formGridPosition">
+                         <Form.Control as="select" style={{marginTop:'20px',padding:'5px',width:" 25%",marginLeft: "35%"}} name='position' onChange={this.handlechange} value={this.state.position} type="text" placeholder="Position">
+                         <option >Sélectionnez position...</option>
+  
+        <option >Grand Tunis</option>
 
-                    </Form.Group>
+        <option >Bizerte</option>
+        <option >Cap Bon</option>
+        <option >Mahdia</option>
+        <option >Monastir</option>
+        <option>Région Centre</option>
+        <option >Région Ouest</option>
+        <option>Région Sud</option>
+        <option >Sfax</option>
+        <option>Sousse</option>
+        </Form.Control>
+        </Form.Group>
+                         <Form.Control style={{marginTop:'20px',padding:'5px',backgroundColor: 'rgba(232, 224, 83, 0.8)'}} name='visiblity' onChange={this.handlechange}  value={this.state.visiblity} type="text" placeholder="visiblity" />
+                         <Form.Control style={{marginTop:'20px',padding:'5px',backgroundColor: 'rgba(232, 224, 83, 0.8)'}}name='datein' onChange={this.handlechange} value={this.state.datein} type="text" placeholder="check in" />
+                         <Form.Control style={{marginTop:'20px',padding:'5px',backgroundColor: 'rgba(232, 224, 83, 0.8)'}}name='dateout' onChange={this.handlechange} value={this.state.dateout} type="text" placeholder="check out" />
+                         </Form.Group>
 
-                   
-                    <Form.Group controlId="formBasicChecbox">
-                        <Form.Check type="checkbox" label="Check me out" />
-                    </Form.Group>
                     <Button variant="primary" type="submit" onClick={this.addact}>
                         Add
                     </Button>
+                   <Link to ="/admin1/list_act"><Button variant="primary">
+                        Cancel
+                    </Button>
+                    </Link>
             </Form>
             </Container>);    
     }

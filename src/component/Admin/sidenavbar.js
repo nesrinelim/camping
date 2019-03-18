@@ -18,6 +18,13 @@ import {Link} from 'react-router-dom'
               onClick={this.handleItemClick}
             /></Link>
           </Menu.Menu>
+          <Menu.Menu>
+           <Link to='/admin1/editprofile'><Menu.Item
+              name='visualize profile'
+              active={activeItem === 'edit profile'}
+              onClick={this.handleItemClick}
+            /></Link>
+          </Menu.Menu>
         </Menu.Item>
 
         <Menu.Item>
@@ -29,7 +36,7 @@ import {Link} from 'react-router-dom'
               active={activeItem === 'add activity'}
               onClick={this.handleItemClick}
             /></Link>
-            <Link to='/admin1/edit_act'><Menu.Item
+            <Link to='/admin1/list_act'><Menu.Item
               name='list activity'
               active={activeItem === 'list activity'}
               onClick={this.handleItemClick}

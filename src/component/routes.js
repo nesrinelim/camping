@@ -52,7 +52,7 @@ class Routes extends Component {
            
             <Route exact path="/admin1/add_act" component={Add_act_admin} />
             <Route exact path="/admin1/editprofile" component={Editprofile} />
-            <Route exact path="/admin1/edit_act" component={Listactivity} />
+            <Route exact path="/admin1/list_act" component={Listactivity} />
             <Route exact path='/admin1/edit/:_id' component={Editact} />
                   </div>
                 }
