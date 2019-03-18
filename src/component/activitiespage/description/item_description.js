@@ -13,9 +13,11 @@ class Item_descript extends Component {
     }
     componentDidMount(){
       this.setState({...this.props.tab.filter(el=>el._id === this.props.match.params._id)[0]})
+      
     }
+    
     render() {
-        
+        console.log(this.props.tab+'tabb')
         return ( <div>
             <Container>
                 <Row>
@@ -96,8 +98,12 @@ class Item_descript extends Component {
         </div> );
     }
 }
-const mapStateToProps=(state)=>{
-  return {tab : state.reducer_filtr}
-}
+
+
+const mapStateToProps = state =>{
+  return {
+          tab : state.reducer_filtr
+          }
+  } 
  
 export default connect(mapStateToProps) (Item_descript);

@@ -35,11 +35,11 @@ class Listactivity extends Component {
         </div>);
     }
 }
-const MapStateToProps=(state)=>{
+const mapStateToProps=(state)=>{
     return {tab : state.reducer_filtr}
 }
 
- const MapDispatchToProps=(dispatch)=>{
+ const mapDispatchToProps=(dispatch)=>{
      return({
             updatetab:(newtab)=>{
                 dispatch({
@@ -50,4 +50,4 @@ const MapStateToProps=(state)=>{
          
      })
  }
-export default connect (MapStateToProps,MapDispatchToProps) (Listactivity);
+export default connect (mapStateToProps,mapDispatchToProps) (Listactivity);

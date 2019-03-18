@@ -15,6 +15,7 @@ class Item extends Component {
             <h5 >{item.typeAct} </h5>
             <h5>{item.datein}</h5>
            <Link to={`/admin1/edit/${item._id}`} > <Button>Edit</Button></Link>
+            <Button>Delete</Button>
         </div> );
     }
 }

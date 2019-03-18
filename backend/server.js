@@ -12,7 +12,7 @@ const database='camping_database'
 MongoClient.connect(MongoUrl,{useNewUrlParser:true},(err,client)=>{
     assert.equal(null,err,'can not connect to database')
     const db=client.db(database)
-
+// activities
     app.post('/addActivities',(req,res)=>{
         let newactiv =req.body
         db.collection('activities').insertOne(newactiv,(err,data)=>{
@@ -31,6 +31,40 @@ MongoClient.connect(MongoUrl,{useNewUrlParser:true},(err,client)=>{
         let modify=req.body
         let id=ObjectID(req.params.id)
         db.collection('activities').findOneAndUpdate({_id:id},{$set:{...modify}},(err,data)=>{
+            if (err) res.send('can t update')
+            res.send(data)
+        })
+    })
+
+
+// profile 
+
+    app.post('/addprofile',(req,res)=>{
+        let newactiv =req.body
+        db.collection('profile').insertOne(newactiv,(err,data)=>{
+            if (err) res.send('cant add profile')
+            res.send(data)
+        })
+    })
+    app.get('/profileinfo',(req,res)=>{
+        db.collection('profile').find().toArray((err,data)=>{
+            if (err) res.send('cant show list activ')
+            res.send(data)
+        })
+    })
+    // app.put('/editprofile/:_id',(req,res)=>{
+    //     let newprofile=req.body
+    //     let id=ObjectID(req.params._id)
+    //     db.collection('profile').findOneAndUpdate({_id:id},{$set:{...newprofile}},(err,res)=>{
+    //         if (err) res.send('can t update profile')
+    //         res.send(data)
+    //     })
+    // })
+    
+    app.put('/editprofile/:id',(req,res)=>{
+        let newprofile=req.body
+        let id=ObjectID(req.params.id)
+        db.collection('profile').findOneAndUpdate({_id:id},{$set:{...newprofile}},(err,data)=>{
             if (err) res.send('can t update')
             res.send(data)
         })

@@ -30,8 +30,8 @@ import {Link} from 'react-router-dom'
               onClick={this.handleItemClick}
             /></Link>
             <Link to='/admin1/edit_act'><Menu.Item
-              name='edit activity'
-              active={activeItem === 'edit activity'}
+              name='list activity'
+              active={activeItem === 'list activity'}
               onClick={this.handleItemClick}
             /></Link>
           </Menu.Menu>

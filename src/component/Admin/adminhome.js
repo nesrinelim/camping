@@ -9,9 +9,9 @@ class Adminhome extends Component {
         this.state = {  }
     }
     render() { 
-        const {admin_info} =this.props
+        
         return ( <div>
-            <MenuExamplePointing admin_info={admin_info} />
+            <MenuExamplePointing/>
             <MenuExampleHeaderVertical/>
           
         </div> );

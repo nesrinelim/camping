@@ -22,7 +22,9 @@ const reducer_filtr = (state=tab,action) =>
            
         return tab.filter(elt =>((elt.typeAct == action.typeact) && (elt.position == action.pos.toLowerCase())))
         // case 'FILTER_ACT' :return tab.filter(elt =>elt.typeAct == action.typeact)
-        case 'ALL_ACT' :if (action.pos !=='' && action.pos !== 'allr')return tab.filter(elt =>elt.position === (action.pos.toLowerCase())); else if (action.typeact=='all' ||action.pos == 'allr') return tab ;
+        case 'ALL_ACT' :if (action.pos !=='' && action.pos !== 'allr')return tab.filter(elt =>elt.position === (action.pos.toLowerCase())); 
+        else if (action.typeact=='all' ||action.pos == 'allr') return tab ;
+        else if(action.pos=='')return tab
         case'ALL_REG' : if(action.typeact !=='' && action.typeact !=='all') return  tab.filter(elt =>elt.typeAct == action.typeact) ; else if(action.typeact =='all') return tab
 
         case 'UPDATE' : return (state = action.newtab, tab=action.newtab)
