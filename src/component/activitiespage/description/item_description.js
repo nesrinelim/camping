@@ -4,6 +4,7 @@ import { Col,Row, Container ,Button} from 'react-bootstrap';
 import {connect} from 'react-redux'
 
 import CollapsePage from './collapse';
+import axios from 'axios';
 
 
 class Item_descript extends Component {
@@ -12,8 +13,8 @@ class Item_descript extends Component {
         this.state = { numb:1 }
     }
     componentDidMount(){
-      this.setState({...this.props.tab.filter(el=>el._id === this.props.match.params._id)[0]})
-      
+      axios.get('/activitieslist')
+        .then(res=>{this.setState({...res.data.filter(el=>el._id === this.props.match.params._id)[0]})})  
     }
     
     render() {

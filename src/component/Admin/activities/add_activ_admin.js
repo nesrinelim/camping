@@ -28,7 +28,7 @@ class Add_act_admin extends Component {
     render() { 
         return ( <Container >
     
-            <Form style={{   padding:'50px',background:'url(https://images.pexels.com/photos/1580329/pexels-photo-1580329.jpeg?cs=srgb&dl=boulder-bowl-daylight-1580329.jpg&fm=jpg?dl&fit=crop&crop=entropy&w=640&h=853)', width: '78%' , marginLeft: "20%"}}>
+            <Form style={{   padding:'50px',background:'url(https://images.pexels.com/photos/1580329/pexels-photo-1580329.jpeg?cs=srgb&dl=boulder-bowl-daylight-1580329.jpg&fm=jpg?dl&fit=crop&crop=entropy&w=1280&h=1706)', width: '78%' , marginLeft: "20%"}}>
             <br/>
             <Form.Group controlId="formBasicEmail" >
                          
@@ -71,9 +71,9 @@ class Add_act_admin extends Component {
                          <Form.Control style={{marginTop:'20px',padding:'5px',backgroundColor: 'rgba(232, 224, 83, 0.8)'}}name='dateout' onChange={this.handlechange} value={this.state.dateout} type="text" placeholder="check out" />
                          </Form.Group>
 
-                    <Button variant="primary" type="submit" onClick={this.addact}>
+                         <Link to ="/admin1/list_act"> <Button variant="primary" type="submit" onClick={this.addact}>
                         Add
-                    </Button>
+                    </Button> </Link>
                    <Link to ="/admin1/list_act"><Button variant="primary">
                         Cancel
                     </Button>

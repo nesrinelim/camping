@@ -12,16 +12,16 @@ import {Link} from 'react-router-dom'
       <Menu.Item>
           <Menu.Header>Profile</Menu.Header>
           <Menu.Menu>
-           <Link to='/admin1/editprofile'><Menu.Item
+           <Link to={'/admin1/editprofile'}><Menu.Item
               name='edit profile'
               active={activeItem === 'edit profile'}
               onClick={this.handleItemClick}
             /></Link>
           </Menu.Menu>
           <Menu.Menu>
-           <Link to='/admin1/editprofile'><Menu.Item
+           <Link to='/admin1/visualize_profile'><Menu.Item
               name='visualize profile'
-              active={activeItem === 'edit profile'}
+              active={activeItem === 'visualize profile'}
               onClick={this.handleItemClick}
             /></Link>
           </Menu.Menu>

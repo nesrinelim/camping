@@ -21,6 +21,7 @@ import Editprofile from './Admin/profile/editprofile';
 import Listactivity from './Admin/activities/listactivity_admin';
 import Editact from './Admin/activities/editactiv_admin';
 import item_description from './activitiespage/description/item_description';
+import Visualize_profile from './Admin/profile/visualizeprofile';
 
 
 class Routes extends Component {
@@ -54,6 +55,7 @@ class Routes extends Component {
             <Route exact path="/admin1/editprofile" component={Editprofile} />
             <Route exact path="/admin1/list_act" component={Listactivity} />
             <Route exact path='/admin1/edit/:_id' component={Editact} />
+            <Route exact path='/admin1/visualize_profile' component={Visualize_profile} />
                   </div>
                 }
          

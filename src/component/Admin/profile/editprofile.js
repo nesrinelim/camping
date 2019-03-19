@@ -4,8 +4,7 @@ import axios from 'axios'
 class Editprofile extends Component {
     constructor(props) {
         super(props);
-        this.state = {  firstname:" halima",
-                        lasttname:'nesrine' }
+        this.state = {   }
     }
     handlechange=(e)=>{
         this.setState({ [e.target.name]:e.target.value})
@@ -24,20 +23,25 @@ class Editprofile extends Component {
     }
     
 }
+componentDidMount(){
+    axios.get('/profileinfo')
+    .then(res=>{this.setState({...res.data[0]})})
+}
 editprofile=()=>{
-    axios.put(`/editprofile/5c8c1739726aaf1d10e7a2f1`,{firstname:this.state.firstname,lasttname:this.state.lasttname,inputfile:this.state.inputfile})
+    axios.put(`/editprofile/${this.state._id}`,{firstname:this.state.firstname , lastname:this.state.lastname, inputfile:this.state.inputfile})
+.catch('error')
 }
     render() { 
         return (  <Container>
                 <Form style={{    width: '78%' , marginLeft: "11%"}}>
                         <Form.Group controlId="formBasicEmail">
                             <Form.Label>First Name</Form.Label>
-                            <Form.Control onChange={this.handlechange} name='firstname'  type="text" value={this.state.firstname} placeholder="First Name" />
+                            <Form.Control onChange={this.handlechange} name='firstname'  type="text" value={this.state.firstname}  />
                             <Form.Label>Last Name</Form.Label>
-                            <Form.Control onChange={this.handlechange} name='lasttname'  type="text" value={this.state.lasttname} placeholder="Last Name" />
+                            <Form.Control onChange={this.handlechange} name='lastname'  type="text" value={this.state.lastname} />
                             <Form.Label>Your Image</Form.Label>
                             <Form.Control  onChange={this.handlechang2}  name="inputfile"  type="file" accept="image/*"   />
-                            <Button onSubmit={this.handleSubmit} >Edit </Button>
+                            <Button onClick={this.editprofile} >Edit </Button>
                         </Form.Group>
                 </Form>
                  <img src={this.state.inputfile} width='10%'height='10%' />

@@ -73,9 +73,9 @@ class Editact extends Component {
                          <Form.Control style={{marginTop:'20px',padding:'5px'}}name='dateout' onChange={this.handlechange} value={this.state.dateout} type="text" placeholder="check out" />
                          </Form.Group>
                          
-                   <Button variant="primary" type="submit" onClick={this.update}>
+                         <Link to ="/admin1/list_act"> <Button variant="primary" type="submit" onClick={this.update}>
                         Edit
-                    </Button>
+                    </Button></Link>
                    <Link to ="/admin1/list_act"><Button variant="primary">
                         Cancel
                     </Button>

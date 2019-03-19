@@ -8,7 +8,8 @@ class Header extends Component {
         super(props);
         this.state = { localisation:'',
                        url:'https://images.pexels.com/photos/239520/pexels-photo-239520.jpeg?dl&fit=crop&crop=entropy&w=1500&h=851' ,
-                       typea:''
+                       typea:'',
+                       active1:true,active2:true,active3:true,active4:true,active5:true,active6:true
                      }
     }
 
@@ -44,29 +45,29 @@ class Header extends Component {
     }} >
    
   <select aria-label="Régions" className="form-control" style={{height:"40px",borderRadius:"0",width:"300px",fontFamily:"Poppins",color:"#000000"}} onChange={this.handlechange} >
-        <option disabled="" value="1" style={{color:"#555555"}}>Sélectionnez votre région...</option>
-        <option value="allr" >Toutes les régions</option>
-        <option value="Grand Tunis">Grand Tunis</option>
-        <option value="Bizerte">Bizerte</option>
-        <option value="Cap Bon">Cap Bon</option>
-        <option value="Mahdia">Mahdia</option>
-        <option value="Monastir">Monastir</option>
-        <option value="Région Centre">Région Centre</option>
-        <option value="Région Ouest">Région Ouest</option>
-        <option value="Région Sud">Région Sud</option>
-        <option value="Sfax">Sfax</option>
-        <option value="Sousse">Sousse</option>
+        <option  disabled="" value="1" style={{color:"#555555"}}>Sélectionnez votre région...</option>
+        <option  value="allr" >Toutes les régions</option>
+        <option  value="Grand Tunis">Grand Tunis</option>
+        <option  value="Bizerte">Bizerte</option>
+        <option  value="Cap Bon">Cap Bon</option>
+        <option  value="Mahdia">Mahdia</option>
+        <option  value="Monastir">Monastir</option>
+        <option  value="Région Centre">Région Centre</option>
+        <option  value="Région Ouest">Région Ouest</option>
+        <option  value="Région Sud">Région Sud</option>
+        <option  value="Sfax">Sfax</option>
+        <option  value="Sousse">Sousse</option>
   </select>
 
     </div> 
     <Container>
-  <Row className="option_filtr">
-                <Col className="option opt"  onClick={this.allactivities}> <img src="https://img.icons8.com/color/52/000000/select-all.png"/> <h5 style={{ fontFamily: "'La Belle Aurore',cursive"}}>All the Activities </h5></Col>
-                <Col className="option"  onClick={()=>this.filtr("Hiking",this.state.localisation)}> <img src="https://img.icons8.com/color/52/000000/trekking.png"/>  <h5 style={{ fontFamily: "'La Belle Aurore',cursive"}}>Hiking</h5></Col>
-                <Col className="option"  onClick={()=>this.filtr("Camping",this.state.localisation)}>   <img src="https://img.icons8.com/color/52/000000/camping-tent.png"/><h5 style={{ fontFamily: "'La Belle Aurore',cursive"}}>Camping</h5></Col>
-                <Col className="option"  onClick={()=>this.filtr("Boat Trip",this.state.localisation)}> <img src="https://img.icons8.com/color/52/000000/windsurfing.png"/> <h5 style={{ fontFamily: "'La Belle Aurore',cursive"}}>Boat Trip</h5></Col>
-                <Col className="option"  onClick={()=>this.filtr("Horse Riding",this.state.localisation)}>  <img src="https://img.icons8.com/color/52/000000/horse.png"/> <h5 style={{ fontFamily: "'La Belle Aurore',cursive"}}>Horse Riding</h5></Col>
-                <Col className="option" onClick={()=>this.filtr("Running",this.state.localisation)}> <img src="https://img.icons8.com/color/52/000000/running.png"/>  <h5 style={{ fontFamily: "'La Belle Aurore',cursive"}}>Running</h5></Col>
+  <Row className="option_filtr" >
+                <Col style={{cursor:'pointer'}} className={this.state.active1 ?"option opt activ":"option opt desactiv"}  onClick={()=>{this.allactivities() ;this.setState( this.setState(prevState => ({ active1: !prevState.active1 ,active2:true,active3:true,active4:true,active5:true,active6:true })))}}> <img src="https://img.icons8.com/color/52/000000/select-all.png"/> <h5 style={{ fontFamily: "'La Belle Aurore',cursive"}}>All the Activities </h5></Col>
+                <Col style={{cursor:'pointer'}} className={this.state.active2 ?"option  activ":"option desactiv"}  onClick={()=>{this.filtr("Hiking",this.state.localisation);this.setState( this.setState(prevState => ({ active2: !prevState.active2 ,active1:true,active3:true,active4:true,active5:true,active6:true })))}}> <img src="https://img.icons8.com/color/52/000000/trekking.png"/>  <h5 style={{ fontFamily: "'La Belle Aurore',cursive"}}>Hiking</h5></Col>
+                <Col style={{cursor:'pointer'}} className={this.state.active3 ?"option  activ":"option desactiv"}  onClick={()=>{this.filtr("Camping",this.state.localisation);this.setState(this.setState(prevState => ({ active3: !prevState.active3 ,active1:true,active2:true,active4:true,active5:true,active6:true })))}}>   <img src="https://img.icons8.com/color/52/000000/camping-tent.png"/><h5 style={{ fontFamily: "'La Belle Aurore',cursive"}}>Camping</h5></Col>
+                <Col style={{cursor:'pointer'}} className={this.state.active4 ?"option  activ":"option desactiv"}  onClick={()=>{this.filtr("Boat Trip",this.state.localisation);this.setState(this.setState(prevState => ({ active4: !prevState.active4 ,active1:true,active3:true,active2:true,active5:true,active6:true  })))}}> <img src="https://img.icons8.com/color/52/000000/windsurfing.png"/> <h5 style={{ fontFamily: "'La Belle Aurore',cursive"}}>Boat Trip</h5></Col>
+                <Col style={{cursor:'pointer'}} className={this.state.active5 ?"option  activ":"option desactiv"}  onClick={()=>{this.filtr("Horse Riding",this.state.localisation);this.setState(this.setState(prevState => ({ active5: !prevState.active5 ,active1:true,active3:true,active4:true,active2:true,active6:true})))}}>  <img src="https://img.icons8.com/color/52/000000/horse.png"/> <h5 style={{ fontFamily: "'La Belle Aurore',cursive"}}>Horse Riding</h5></Col>
+                <Col style={{cursor:'pointer'}} className={this.state.active6 ?"option  activ":"option desactiv"} onClick={()=>{this.filtr("Running",this.state.localisation);this.setState(this.setState(prevState => ({ active6: !prevState.active6 ,active1:true,active3:true,active4:true,active5:true,active2:true })))}}> <img src="https://img.icons8.com/color/52/000000/running.png"/>  <h5 style={{ fontFamily: "'La Belle Aurore',cursive"}}>Running</h5></Col>
                 
             </Row>
             </Container>

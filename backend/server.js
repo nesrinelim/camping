@@ -36,7 +36,22 @@ MongoClient.connect(MongoUrl,{useNewUrlParser:true},(err,client)=>{
         })
     })
 
+    app.put('/editactivity/:id',(req,res)=>{
+        let modify=req.body
+        let id=ObjectID(req.params.id)
+        db.collection('activities').findOneAndUpdate({_id:id},{$set:{...modify}},(err,data)=>{
+            if (err) res.send('can t update')
+            res.send(data)
+        })
+    })
 
+    app.delete('/deleteactivity/:id',(req,res)=>{
+        let id=ObjectID(req.params.id)
+        db.collection('activities').findOneAndDelete({_id:id},(err,data)=>{
+            if (err) res.send('there is an error cant delete')
+            else res.send(" deleted")
+        })
+    })
 // profile 
 
     app.post('/addprofile',(req,res)=>{
@@ -52,14 +67,6 @@ MongoClient.connect(MongoUrl,{useNewUrlParser:true},(err,client)=>{
             res.send(data)
         })
     })
-    // app.put('/editprofile/:_id',(req,res)=>{
-    //     let newprofile=req.body
-    //     let id=ObjectID(req.params._id)
-    //     db.collection('profile').findOneAndUpdate({_id:id},{$set:{...newprofile}},(err,res)=>{
-    //         if (err) res.send('can t update profile')
-    //         res.send(data)
-    //     })
-    // })
     
     app.put('/editprofile/:id',(req,res)=>{
         let newprofile=req.body
