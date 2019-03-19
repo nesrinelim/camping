@@ -4,13 +4,9 @@ import {Container,Row,Col} from 'react-bootstrap'
 
 class Login extends React.Component {
   state = {
-    fname: "",
-    lname: "",
-    email: "",
-    password: "",
     email_: "",
     password_: "",
-   
+  
   };
 
   submitHandler = event => {

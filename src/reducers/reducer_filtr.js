@@ -29,6 +29,7 @@ const reducer_filtr = (state=tab,action) =>
 
         case 'UPDATE' : return (state = action.newtab, tab=action.newtab)
         default :return  state;
+       
     }
     
 }

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { MDBRow, MDBCol, MDBBtn, MDBCard, MDBInput } from "mdbreact";
 import {Container,Row,Col} from 'react-bootstrap'
+import axios from 'axios'
+import {Link} from 'react-router-dom'
 
 class Signup extends Component {
     constructor(props) {
@@ -10,8 +12,7 @@ class Signup extends Component {
             lname: "",
             email: "",
             password: "",
-            email_: "",
-            password_: "",
+       
            
           };}
         
@@ -23,6 +24,12 @@ class Signup extends Component {
           changeHandler = event => {
             this.setState({ [event.target.name]: event.target.value });
           };
+  
+           adduser=()=>{
+            axios.post('/adduser',{...this.state})
+           }
+
+
     render() { 
         return (  <div >
             <img src="https://static.wixstatic.com/media/ff6bf6_6cb3f5967ada4c26a9401daa5cd39d2f.png/v1/fill/w_155,h_58,al_c,q_80,usm_0.66_1.00_0.01/ff6bf6_6cb3f5967ada4c26a9401daa5cd39d2f.webp"></img>
@@ -140,19 +147,19 @@ class Signup extends Component {
             </div>
               </div>
               
-              <MDBRow className="d-flex align-items-center mb-4">
+         <Link to="/userprofile">    <MDBRow className="d-flex align-items-center mb-4">
                 <div className="text-center mb-3 col-md-12">
                   <MDBBtn
                     color="pink"
                     rounded
-                    
+                    onClick={this.adduser}
                     className="btn-block z-depth-1"
                     type="submit"
                   >
                     Sign up
-                  </MDBBtn>
+                     </MDBBtn>
                 </div>
-              </MDBRow>
+              </MDBRow> </Link> 
              
             </div>
           </MDBCard>

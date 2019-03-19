@@ -48,50 +48,50 @@ import {Link} from 'react-router-dom'
           <Menu.Header>Users</Menu.Header>
 
           <Menu.Menu>
-            <Menu.Item
-              name='add user'
+         <Link to='/admin1/userlist'> <Menu.Item
+              name='visiualize list user'
               active={activeItem === 'add user'}
               onClick={this.handleItemClick}
-            />
+            /></Link> 
             <Menu.Item
               name='edit user'
               active={activeItem === 'edit user'}
               onClick={this.handleItemClick}
             />
-            <Menu.Item 
-            name='php'
-             active={activeItem === 'php'}
-              onClick={this.handleItemClick} />
+            {/* <Menu.Item 
+            name='Profile user'
+             active={activeItem === 'Profile user'}
+              onClick={this.handleItemClick} /> */}
           </Menu.Menu>
         </Menu.Item>
 
         <Menu.Item>
-          <Menu.Header>Hosting</Menu.Header>
+          <Menu.Header>Reservation</Menu.Header>
 
           <Menu.Menu>
             <Menu.Item
-              name='shared'
-              active={activeItem === 'shared'}
+              name='edit reservation'
+              active={activeItem === 'edit reservation'}
               onClick={this.handleItemClick}
             />
             <Menu.Item
-              name='dedicated'
-              active={activeItem === 'dedicated'}
+              name='add reservation'
+              active={activeItem === 'add reservation'}
               onClick={this.handleItemClick}
             />
           </Menu.Menu>
         </Menu.Item>
 
         <Menu.Item>
-          <Menu.Header>Support</Menu.Header>
+          <Menu.Header>Feedback</Menu.Header>
 
           <Menu.Menu>
-            <Menu.Item name='email' active={activeItem === 'email'} onClick={this.handleItemClick}>
-              E-mail Support
+            <Menu.Item name='add feedback' active={activeItem === 'add feedback'} onClick={this.handleItemClick}>
+            add feedback
             </Menu.Item>
 
-            <Menu.Item name='faq' active={activeItem === 'faq'} onClick={this.handleItemClick}>
-              FAQs
+            <Menu.Item name='edit feedback' active={activeItem === 'edit feedback'} onClick={this.handleItemClick}>
+            edit feedback
             </Menu.Item>
             <Menu.Menu position='right'>
            

@@ -21,8 +21,8 @@ import Editprofile from './Admin/profile/editprofile';
 import Listactivity from './Admin/activities/listactivity_admin';
 import Editact from './Admin/activities/editactiv_admin';
 import item_description from './activitiespage/description/item_description';
-
-
+import Profileuser from './User/Profile/Profileuser'
+import Listusers_admin from './Admin/users/listusers_admin'
 class Routes extends Component {
     constructor(props) {
         super(props);
@@ -44,7 +44,7 @@ class Routes extends Component {
             <Route exct path="/signup" component={Signup}/>
             <Route exct path="/feedback" component={Feedback}/>
             <Route exact path='/description/:_id' component={item_description}/>
-            <Route  path="/" component={Footer} />
+         <Route  path="/" component={Footer} />
              </div> : 
              <div >
              <Route exct path="/admin1" component={Adminhome}/>
@@ -54,6 +54,8 @@ class Routes extends Component {
             <Route exact path="/admin1/editprofile" component={Editprofile} />
             <Route exact path="/admin1/list_act" component={Listactivity} />
             <Route exact path='/admin1/edit/:_id' component={Editact} />
+            <Route exact path='/userprofile' component={Profileuser} />
+            <Route exact path='/admin1/userlist' component={Listusers_admin} />
                   </div>
                 }
          
