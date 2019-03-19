@@ -38,11 +38,11 @@ class Add_act_admin extends Component {
       <option>TypeOf Activity</option>
       <option>Hiking</option>
      <option>Camping</option>
-    <option>Boat Trip</option>
-    <option>Horse Riding</option>
-    <option>Running</option>
+     <option>Boat Trip</option>
+     <option>Horse Riding</option>
+      <option>Running</option>
       </Form.Control>
-    </Form.Group>
+      </Form.Group>
                          <Form.Control style={{marginTop:'20px',padding:'5px' ,backgroundColor: 'rgba(232, 224, 83, 0.8)'}}name='descriptAct' onChange={this.handlechange} value={this.state.descriptAct} type="text" placeholder="Description Of Activity" />
                          <Form.Control style={{marginTop:'20px',padding:'5px',backgroundColor: 'rgba(232, 224, 83, 0.8)'}}name='priceAct' onChange={this.handlechange}  value={this.state.priceAct} type="text" placeholder="Price" />
                          <Form.Control style={{marginTop:'20px',padding:'5px',backgroundColor: 'rgba(232, 224, 83, 0.8)'}}name='nbr_pplace' onChange={this.handlechange}  value={this.state.nbr_pplace} type="text" placeholder="Availble Place" />

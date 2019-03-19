@@ -35,6 +35,14 @@ MongoClient.connect(MongoUrl,{useNewUrlParser:true},(err,client)=>{
             res.send(data)
         })
     })
+    //remove contact
+app.delete('/deleteactivity/:id',(req,res)=>{
+    let id=ObjectID(req.params.id)
+    db.collection('activities').findOneAndDelete({_id:id},(err,data)=>{
+        if (err) res.send('can not delete activity')
+        else res.send(data)
+    })
+})
 
     app.put('/editactivity/:id',(req,res)=>{
         let modify=req.body
@@ -77,7 +85,46 @@ MongoClient.connect(MongoUrl,{useNewUrlParser:true},(err,client)=>{
         })
     })
 
+    //profile user
+    //add user
+    app.post('/adduser',(req,res)=>{
+        let newuser=req.body
+        db.collection('user').insertOne(newuser,(err,data)=>{
+        if (err) res.send('cant add user')
+        res.send(data)
+        
+        })
+        
+        })
+//afficher user
+        app.get('/admin1/userlist',(req,res)=>{
+            db.collection('user').find().toArray((err,data)=>{
+                if (err) res.send('cant show list user')
+                res.send(data)
+            })
+
+        })
+//edit user
+
+app.put('/edituser/:id',(req,res)=>{
+    let modify=req.body
+    let id=ObjectID(req.params.id)
+    db.collection('user').findOneAndUpdate({_id:id},{$set:{...modify}},(err,data)=>{
+        if (err) res.send('can t update')
+        res.send(data)
+    })
 })
+//delete user
+app.delete('/deleteuser/:id',(req,res)=>{
+    let id=ObjectID(req.params.id)
+    db.collection('user').findOneAndDelete({_id:id},(err,data)=>{
+        if (err) res.send('can not delete user')
+        else res.send(data)
+    })
+})
+
+})
+
 
 
 

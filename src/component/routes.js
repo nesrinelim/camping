@@ -24,6 +24,8 @@ import item_description from './activitiespage/description/item_description';
 import Visualize_profile from './Admin/profile/visualizeprofile';
 
 
+import Profileuser from './User/Profile/Profileuser'
+import Listusers_admin from './Admin/users/listusers_admin'
 class Routes extends Component {
     constructor(props) {
         super(props);
@@ -45,7 +47,7 @@ class Routes extends Component {
             <Route exct path="/signup" component={Signup}/>
             <Route exct path="/feedback" component={Feedback}/>
             <Route exact path='/description/:_id' component={item_description}/>
-            <Route  path="/" component={Footer} />
+         <Route  path="/" component={Footer} />
              </div> : 
              <div >
              <Route exct path="/admin1" component={Adminhome}/>
@@ -56,6 +58,8 @@ class Routes extends Component {
             <Route exact path="/admin1/list_act" component={Listactivity} />
             <Route exact path='/admin1/edit/:_id' component={Editact} />
             <Route exact path='/admin1/visualize_profile' component={Visualize_profile} />
+            <Route exact path='/userprofile' component={Profileuser} />
+            <Route exact path='/admin1/userlist' component={Listusers_admin} />
                   </div>
                 }
          
