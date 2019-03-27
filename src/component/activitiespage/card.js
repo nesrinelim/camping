@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact';
 import StarRatingComponent from 'react-star-rating-component';
 import {Link} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 
 class CardExample  extends Component {
   constructor(props) {
@@ -9,8 +10,9 @@ class CardExample  extends Component {
     this.state = {  }
   }
   render() { 
+    console.log(this.props.location.pathname+'oooo')
     const {item}=this.props
-    return ( <Link to={`/description/${item._id}`}> <div style={{ width: "18rem" ,color:'black' }}>
+    return ( <Link to={(this.props.location.pathname.indexOf("/user") !== -1)?  `/user/description/${item._id}` : `/description/${item._id}`}> <div style={{ width: "18rem" ,color:'black' }}>
     <div ><img className='img_card' src={item.image} width='350rem' height='200rem' /></div>
     <div style={{textAlign:" start" ,position:"relative" }} >
     <label className='label1_card' style={{fontSize:"12px",position:"absolute",top: "1%" , left:" 3%"}} > <i class="material-icons" style={{fontSize:"8px"}} >place</i> {item.typeAct}</label>
@@ -33,7 +35,7 @@ class CardExample  extends Component {
   }
 }
  
-export default CardExample  ;
+export default withRouter (CardExample)  ;
 
 // const CardExample = (props) => {
     

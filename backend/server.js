@@ -91,7 +91,7 @@ app.delete('/deleteactivity/:id',(req,res)=>{
         let newuser=req.body
         db.collection('user').insertOne(newuser,(err,data)=>{
         if (err) res.send('cant add user')
-        res.send(data)
+        res.send(newuser)
         
         })
         
@@ -122,8 +122,37 @@ app.delete('/deleteuser/:id',(req,res)=>{
         else res.send(data)
     })
 })
+// get user for user interface
+app.get('/userlist',(req,res)=>{
+    db.collection('user').find().toArray((err,data)=>{
+        if (err) res.send('cant show list user')
+        res.send(data)
+    })
 
 })
+app.post('/reservedactivity',(req,res)=>{
+    let reserved=req.body
+    db.collection('reservedactivity').insertOne(reserved,(err,data)=>{
+    if (err) res.send('cant add user')
+    res.send(data)
+    
+    })
+    
+    })
+
+    app.get('/:id',(req, res) =>{
+        let id=ObjectID(req.params.id)
+        db.collection('user').findOne({_id:id},(err,data)=>{
+            if (err) res.send('error')
+            res.send(data);
+        })
+        
+    })
+        
+
+
+})
+
 
 
 

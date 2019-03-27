@@ -28,7 +28,7 @@ class Listactivity extends Component {
             
             
             <div className="row container ">
-                    {this.props.tab.map((el,index)=><div className="col lg-4 md-6 sm-12"><CardExample item ={el} key={index}/></div>)}
+                    {this.props.tab.filter(el=>el.visiblity).map((el,index)=><div className="col lg-4 md-6 sm-12"><CardExample item ={el} key={index}/></div>)}
             
             </div>
 

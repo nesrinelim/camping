@@ -11,19 +11,21 @@ class Visualize_profile extends Component {
         .then(res=>{this.setState({...res.data[0]})})
     }
     render() { 
-        return ( <div  style={{    width: '78%' , marginLeft: "18%" ,display:'flex',alignItems: 'center'}}>
-
-        <div style={{border :'1px solid black' , padding:'1%'}}>
+        return ( <div  style={{width: '78%' , marginLeft: "18%" }}>
+        <h1>Info Admin</h1>
+        <div style={{display:'flex',alignItems: 'center'}}>
+        <div style={{border :'1px solid #33b5e5',borderRadius:'5px' ,borderRight:' none', padding:'1%', textAlign:'start'}}>
             
             <img src={this.state.inputfile} height='250px' width='250px' />
-
-
+                <div style={{display:'flex'}}>
+            <i class="material-icons" style={{fontSize:'18px',color:'#33b5e5',padding:'1px'}}>local_phone</i> <h5> Contact Info </h5></div>
+            <br/><h6>22 222 222 / 33 333 333</h6>
         </div>
-            <Card border="info" style={{ width: '50rem' }}>
-   <div style={{display:'flex'}}> <Card.Header style={{ width: '25rem' }}>My Profile</Card.Header><Card.Header style={{ width: '25rem' }}>Header</Card.Header></div>
+            <Card border="info" style={{ width: '50rem',marginTop:' 0px',height: '336px' }}>
+   <div style={{display:'flex'}}> <Card.Header style={{ width: '25rem' }}>My Profile</Card.Header><Card.Header style={{ width: '25rem' }}>Password</Card.Header></div>
     
     <Card.Body>
-      <Card.Title>Info Card Title</Card.Title>
+      <br/>
       <Card.Text>
         
       <InputGroup className="mb-3">
@@ -52,6 +54,7 @@ class Visualize_profile extends Component {
       </Card.Text>
     </Card.Body>
   </Card>
+  </div>
         </div> );
     }
 }

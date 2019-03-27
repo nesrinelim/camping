@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import StarRatingComponent from 'react-star-rating-component';
 import { Col,Row, Container ,Button} from 'react-bootstrap';
 import {connect} from 'react-redux'
-
+import {Link} from 'react-router-dom'
 import CollapsePage from './collapse';
 import axios from 'axios';
 
@@ -16,7 +16,9 @@ class Item_descript extends Component {
       axios.get('/activitieslist')
         .then(res=>{this.setState({...res.data.filter(el=>el._id === this.props.match.params._id)[0]})})  
     }
-    
+    reserve_act=()=>{
+      axios.post('/reservedactivity',{...this.state})
+    }
     render() {
         console.log(this.props.tab+'tabb')
         return ( <div>
@@ -47,37 +49,35 @@ class Item_descript extends Component {
                         <Button>Maps</Button>
                         <Button>Website</Button>
                         <Button>FB</Button> <br/>
-                        {/* </div> */}
+                       
                    </Col>
         </Row>
         <br/>
         <div className="booking_block" style={{backgroundColor:'rgba(219, 239, 244, 0.8)',position:'relative', height: '76px' , width: '1141px',    display: 'flex',justifyContent:' space-around'}}>
-          {/* <Col> */}
+         
           <div>
             <label>Check In</label> <br/>
             <input value={this.state.datein}style={{width: "100%" , padding: "2%"}} ></input>
             <i class="fa fa-calendar-o calendar1 " style={{fontSize:"24px"}}></i>
           </div>
-          {/* </Col> */}
-          {/* <Col> */}
+          
           <div>
             <label>Check Out</label> <br/>
             <input value={this.state.dateout}style={{width: "100%" , padding: "2%"}} ></input>
             <i class="fa fa-calendar-o calendar2" style={{fontSize:"24px"}}></i>
           </div>
-          {/* </Col> */}
-          {/* <Col> */}
+          
+         
           <div>
             <label>Persons</label> <br/>
             <input value={this.state.numb}style={{width: "48%" , padding: "2%"}} ></input> <i class="fa fa-caret-up" onClick={()=>this.setState(prevState =>({numb : prevState.numb +1}))} style={{fontSize:"24px"}}></i> <i class="fa fa-caret-down" onClick={()=>{ this.state.numb == 0 ? this.setState({numb:0}) :this.setState(prevState =>({numb : prevState.numb -1}))}} style={{fontSize:"24px"}}></i>
           </div>
-          {/* </Col>
-          <Col> */}
+          
           <div>
               <br/>
-            <Button>prices and booking</Button>
+            <Link to={(this.props.location.pathname.indexOf("/user") !== -1)? "/user/reservation":"/login" }><Button onClick={this.reserve_act}>prices and booking</Button></Link>
           </div>
-          {/* </Col> */}
+          
 
         
         </div>

@@ -27,6 +27,7 @@ class Signup extends Component {
   
            adduser=()=>{
             axios.post('/adduser',{...this.state})
+            .then(res=>this.props.id_user(res.data._id))
            }
 
 
@@ -90,32 +91,7 @@ class Signup extends Component {
               name="email"
               placeholder="Your Email address"
               required/>
-              {/* <label
-                htmlFor="defaultFormRegisterNameEx"
-                className="grey-text"
-              >
-                First name
-              </label>
-              <input className= "form-control validate"
-                style={{background: "0",
-                borderTop: "1px",
-                borderLeft: "1px",
-                borderRight: "1px"}}
-                validate 
-                group
-                value={this.state.fname}
-                name="fname"
-                onChange={this.changeHandler}
-                type="text"
-                id="defaultFormRegisterNameEx"
-                className="form-control"
-                placeholder="First name"
-                required
-              />
-              <div className="valid-feedback">Looks good!</div>
-              <div className="invalid-feedback">
-                champ vide.
-              </div> */}
+             
 
              
 
@@ -147,7 +123,7 @@ class Signup extends Component {
             </div>
               </div>
               
-         <Link to="/userprofile">    <MDBRow className="d-flex align-items-center mb-4">
+         <Link to="/user/profile">    <MDBRow className="d-flex align-items-center mb-4">
                 <div className="text-center mb-3 col-md-12">
                   <MDBBtn
                     color="pink"

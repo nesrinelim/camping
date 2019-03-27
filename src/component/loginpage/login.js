@@ -1,12 +1,12 @@
 import React from "react";
 import { MDBRow, MDBCol, MDBBtn, MDBCard, MDBInput } from "mdbreact";
 import {Container,Row,Col} from 'react-bootstrap'
-
+import {Link} from 'react-router-dom'
+import axios from 'axios'
 class Login extends React.Component {
   state = {
     email_: "",
-    password_: "",
-  
+    password_: "",tab_admin:[],tab_user:[]
   };
 
   submitHandler = event => {
@@ -16,8 +16,17 @@ class Login extends React.Component {
 
   changeHandler = event => {
     this.setState({ [event.target.name]: event.target.value });
+    this.find_user_admin()
   };
-
+    find_user_admin=()=>{
+      axios.get('/userlist')
+        .then(res=>{this.setState({tab_user:Object.values(res.data.filter(el=>el.email === this.state.email_)[0])}) })
+        axios.get('/profileinfo')
+        console.log(this.state.tab_user.length+'tabbbuser')
+        .then(res=>this.setState({tab_admin:(res.data.filter(el=>el.email === this.state.email_)[0])}))
+        if(this.state.tab_user.length !==0) this.setState({pathh:'/user'}) 
+          this.setState({pathh:'/admin1'}) 
+    }
   render() {
     return (
       <div>
@@ -83,15 +92,15 @@ class Login extends React.Component {
               
               <MDBRow className="d-flex align-items-center mb-4">
                 <div className="text-center mb-3 col-md-12">
-                  <MDBBtn
+                 <Link to={`${this.state.pathh}`}> <MDBBtn
                     color="pink"
                     rounded
-                    
+                    // onClick={this.find_user_admin}
                     className="btn-block z-depth-1"
                     type="submit"
                   >
                     Sign in
-                  </MDBBtn>
+                  </MDBBtn></Link>
                 </div>
               </MDBRow>
               <MDBCol md="12">
@@ -108,7 +117,7 @@ class Login extends React.Component {
       </MDBRow>
         </form>
         <br/>
-       
+       {/* <button onClick={this.find_user_admin}>ok</button> */}
         </Container>
       </div>
     );

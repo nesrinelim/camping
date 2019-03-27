@@ -13,16 +13,16 @@ const reducer_filtr = (state=tab,action) =>
 {
     switch(action.type){
         case 'FILTER_REG' :
-            if( (action.typeact=='') ||(action.typeact=='all') )  return tab.filter(elt =>elt.position === (action.pos.toLowerCase())) ;
-            else if((action.typeact !=='') ||(action.typeact=='all') ) return tab.filter(elt =>((elt.typeAct == action.typeact) && (elt.position == action.pos.toLowerCase())));
+            if( (action.typeact=='') ||(action.typeact=='all') )  return tab.filter(elt =>elt.position === (action.pos)) ;
+            else if((action.typeact !=='') ||(action.typeact=='all') ) return tab.filter(elt =>((elt.typeAct == action.typeact) && (elt.position == action.pos)));
             else if (action.pos =='allr' && action.typeact !=='')return tab.filter(elt =>elt.typeAct == action.typeact)
            
-            // case 'FILTER_REG' :return tab.filter(elt =>elt.position === (action.pos.toLowerCase())) 
+            // case 'FILTER_REG' :return tab.filter(elt =>elt.position === (action.pos)) 
         case 'FILTER_ACT' :if (action.pos==''||action.pos=='allr') return tab.filter(elt =>elt.typeAct == action.typeact) ;
            
-        return tab.filter(elt =>((elt.typeAct == action.typeact) && (elt.position == action.pos.toLowerCase())))
+        return tab.filter(elt =>((elt.typeAct == action.typeact) && (elt.position == action.pos)))
         // case 'FILTER_ACT' :return tab.filter(elt =>elt.typeAct == action.typeact)
-        case 'ALL_ACT' :if (action.pos !=='' && action.pos !== 'allr')return tab.filter(elt =>elt.position === (action.pos.toLowerCase())); 
+        case 'ALL_ACT' :if (action.pos !=='' && action.pos !== 'allr')return tab.filter(elt =>elt.position === (action.pos)); 
         else if (action.typeact=='all' ||action.pos == 'allr') return tab ;
         else if(action.pos=='')return tab
         case'ALL_REG' : if(action.typeact !=='' && action.typeact !=='all') return  tab.filter(elt =>elt.typeAct == action.typeact) ; else if(action.typeact =='all') return tab
