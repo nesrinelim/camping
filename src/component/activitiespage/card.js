@@ -10,7 +10,31 @@ class CardExample  extends Component {
   }
   render() { 
     const {item}=this.props
-    return ( <Link to={`/description/${item._id}`}> <div style={{ width: "18rem" ,color:'black' }}>
+    return ( <Link to={`/description/${item._id}`}> 
+    <div className="itemactivity-container">
+     
+     <div class="item"> <img className="image-activity"src={item.image}/></div> 
+     
+     <div style={{lineHeight: "normal"}}>
+     <div style={{display: "flex" ,justifyContent: "space-between"}}>
+     <span style={{Color: "rgb(97, 97, 97)",fontSize: "12px",textTransform: "capitalize"}}><i class="material-icons">restaurant</i>{item.typeAct}</span>
+     <span style={{Color: "rgb(97, 97, 97)",fontSize: "12px",textTransform: "capitalize"}}><i class="material-icons">place</i> {item.position}</span>
+     </div>
+     
+     <div className="tt">
+     <StarRatingComponent 
+             name="rate1" 
+             starCount={5}
+             value={item.rate}
+           />  
+        <h1 style={{fontWeight: "bold",color: "rgb(0, 0, 0)",fontSize: "16px", whiteSpace: "nowrap",overflow: "hidden",fontFamily: "Poppins"}}>{item.title}</h1>
+       <h2 style={{color: "rgb(97, 97, 97)", fontSize: "12px",fontFamily: "Poppins"}}><span>{item.descriptAct }</span></h2>
+       <h4 style={{color: "rgb(97, 97, 97)", fontSize: "12px",fontFamily: "Poppins"}}>price: {item.priceAct}</h4>
+     
+       </div>
+       </div>
+       </div>
+    {/* <div style={{ width: "18rem" ,color:'black' }}>
     <div ><img className='img_card' src={item.image} width='350rem' height='200rem' /></div>
     <div style={{textAlign:" start" ,position:"relative" }} >
     <label className='label1_card' style={{fontSize:"12px",position:"absolute",top: "1%" , left:" 3%"}} > <i class="material-icons" style={{fontSize:"8px"}} >place</i> {item.typeAct}</label>
@@ -29,10 +53,12 @@ class CardExample  extends Component {
      
 
     </div>
-  </div> </Link>);
+  </div>  */}
+  </Link>);
   }
 }
- 
+
+
 export default CardExample  ;
 
 // const CardExample = (props) => {
