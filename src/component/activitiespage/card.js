@@ -31,7 +31,8 @@ class CardExample  extends Component {
      
 
     </div>
-  </div> </Link>);
+  </div>  
+  </Link>);
   }
 }
  

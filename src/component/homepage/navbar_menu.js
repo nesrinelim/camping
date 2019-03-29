@@ -24,7 +24,7 @@ class NavbarMenu extends Component {
                     
             </Nav>
             <Nav >
-            <Link to="/login"  style={{color:'pink'}} >SIGN IN </Link> 
+            <Link to="/login"  style={{color:'pink',borderRadius:'2px',border : '1px solid pink',padding:'8%'}} >SIGN IN </Link> 
             </Nav>
               
             </Navbar.Collapse>  

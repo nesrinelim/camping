@@ -1,26 +1,38 @@
 import React, { Component } from 'react';
 import StarRatingComponent from 'react-star-rating-component';
-import { Col,Row, Container ,Button} from 'react-bootstrap';
+import { Col,Row, Container ,Button,ButtonToolbar} from 'react-bootstrap';
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import CollapsePage from './collapse';
 import axios from 'axios';
 
+import MyVerticallyCenteredModal from './modal';
+
 
 class Item_descript extends Component {
     constructor(props) {
         super(props);
-        this.state = { numb:1 }
+        this.state = { numb:1,modalShow: false  }
     }
     componentDidMount(){
       axios.get('/activitieslist')
-        .then(res=>{this.setState({...res.data.filter(el=>el._id === this.props.match.params._id)[0]})})  
+        .then(res=>{this.setState({...res.data.filter(el=>el._id === this.props.match.params._id)[0]},()=>this.saveToLocalStorage(this.props.match.params._id))})  
     }
     reserve_act=()=>{
       axios.post('/reservedactivity',{...this.state})
     }
+    saveToLocalStorage=(state)=> {
+      try {
+         const serializedState = JSON.stringify(state)
+           localStorage.setItem('id_act', serializedState)
+          } catch(e) {
+            console.log(e)
+              }
+          }
+    
     render() {
-        console.log(this.props.tab+'tabb')
+       
+        let modalClose = () => this.setState({ modalShow: false })
         return ( <div>
             <Container>
                 <Row>
@@ -75,7 +87,17 @@ class Item_descript extends Component {
           
           <div>
               <br/>
-            <Link to={(this.props.location.pathname.indexOf("/user") !== -1)? "/user/reservation":"/login" }><Button onClick={this.reserve_act}>prices and booking</Button></Link>
+            <Link to={(this.props.location.pathname.indexOf("/user") !== -1)? "/user/reservation":"/login" }>
+            <ButtonToolbar>
+            <Button onClick={(this.props.location.pathname.indexOf("/user") == -1)  ? ()=>this.setState({ modalShow: true }) : this.reserve_act}>prices and booking</Button>
+        <MyVerticallyCenteredModal
+          show={this.state.modalShow}
+          onHide={modalClose}
+        />
+      </ButtonToolbar>
+            
+            
+            </Link>
           </div>
           
 

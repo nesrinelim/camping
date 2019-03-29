@@ -1,12 +1,49 @@
 import React, { Component } from 'react';
 import { Nav,Navbar,Container,NavDropdown} from 'react-bootstrap';
 import {Link}from 'react-router-dom'
-
+import axios from 'axios'
 class Navbar_user extends Component {
     constructor(props) {
         super(props);
         this.state = {  }
     }
+    saveToLocalStorage=(state)=> {
+      try {
+         const serializedState = JSON.stringify(state)
+           localStorage.setItem('state', serializedState)
+          } catch(e) {
+            console.log(e)
+              }
+          }
+    loadFromLocalStorage=()=> {
+      try {
+       const serializedState = localStorage.getItem('state')
+       if (serializedState === null) return undefined
+       return JSON.parse(serializedState)
+        } catch(e) {
+         console.log(e)
+         return undefined
+           }
+         }
+         componentDidUpdate(){
+          if(this.props.id !==''){axios.get(`/userlist/${this.props.id}`)
+          
+          .then((res)=>this.setState({...res.data}))
+          
+          .then( this.saveToLocalStorage(this.props.id))
+          .catch((err)=>alert(err))
+          
+          }
+          // else {
+    
+        }
+        componentDidMount(){
+          // if (this.props.id ==='')
+          {axios.get(`/userlist/${this.loadFromLocalStorage()}`)
+          
+          .then((res)=>this.setState({...res.data}))
+          .catch((err)=>alert(err))}
+        }
     render() { 
         return (<Navbar className="navbar" collapseOnSelect expand="lg"  fixed="top">
         <Container>
@@ -22,7 +59,7 @@ class Navbar_user extends Component {
                        
                </Nav>
 
-               <NavDropdown title="Nesrine Limayem" id="nav-dropdown">
+               <NavDropdown title={this.state.fname+ ' '+this.state.lname} id="nav-dropdown">
                 <NavDropdown.Item eventKey="4.1" > <Link to='/user/profile'><i class="fa fa-user fa-fw"></i> My profile</Link></NavDropdown.Item>
           <NavDropdown.Item eventKey="4.2"><Link to='/user/reservation'><i class="fa fa-calendar-check-o"></i> Reservation</Link></NavDropdown.Item>
           <NavDropdown.Item eventKey="4.3">

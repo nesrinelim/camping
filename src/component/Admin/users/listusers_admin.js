@@ -12,6 +12,12 @@ class Listusers_admin extends Component {
         .then(res=>{this.setState({tab1 : res.data})})
       
     }
+
+    componentDidUpdate(){
+        axios.get('/admin1/userlist')
+        .then(res=>{this.setState({tab1 : res.data})})
+      
+    }
     render() { 
         return ( <div>
             <h1>List Of Userss</h1>

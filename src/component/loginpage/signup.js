@@ -12,16 +12,17 @@ class Signup extends Component {
             lname: "",
             email: "",
             password: "",
+            bday:'',img_user:'',phone:'',city:''
        
            
           };}
         
-          submitHandler = event => {
+          submitHandler = (event) => {
             event.preventDefault();
             event.target.className += " was-validated";
           };
         
-          changeHandler = event => {
+          changeHandler = (event) => {
             this.setState({ [event.target.name]: event.target.value });
           };
   

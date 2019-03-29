@@ -1,10 +1,21 @@
 import React, { Component } from 'react';
 import {  Form, Button,Modal } from 'react-bootstrap';
+import Axios from 'axios'
 class MyVerticallyCenteredModal extends React.Component {
     constructor(props) {
       super(props);
       this.state = {  }
     }
+    loadFromLocalStorage=()=> {
+      try {
+       const serializedState = localStorage.getItem('state')
+       if (serializedState === null) return undefined
+       return JSON.parse(serializedState)
+        } catch(e) {
+         console.log(e)
+         return undefined
+           }
+         }
     handlechang2=(e)=>{
       
       let files=e.target.files
@@ -15,6 +26,9 @@ class MyVerticallyCenteredModal extends React.Component {
           console.log('imageee',e.target.result)
           this.setState({img_user:e.target.result})
       }}
+      edit_img=()=>{
+        Axios.put(`/edituser/${this.loadFromLocalStorage()}`,{img_user:this.state.img_user})
+      }
     render() {
       return (
         <Modal
@@ -35,7 +49,7 @@ class MyVerticallyCenteredModal extends React.Component {
   
           </Modal.Body>
           <Modal.Footer>
-            <Button onClick={this.props.onHide}>Edit image</Button>
+            <Button onClick={()=>{this.edit_img()}}>Edit image</Button>
           </Modal.Footer>
         </Modal>
       );

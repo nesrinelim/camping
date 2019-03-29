@@ -19,13 +19,14 @@ class Login extends React.Component {
     this.find_user_admin()
   };
     find_user_admin=()=>{
-      axios.get('/userlist')
-        .then(res=>{this.setState({tab_user:Object.values(res.data.filter(el=>el.email === this.state.email_)[0])}) })
-        axios.get('/profileinfo')
-        console.log(this.state.tab_user.length+'tabbbuser')
-        .then(res=>this.setState({tab_admin:(res.data.filter(el=>el.email === this.state.email_)[0])}))
-        if(this.state.tab_user.length !==0) this.setState({pathh:'/user'}) 
-          this.setState({pathh:'/admin1'}) 
+      axios.get(`/user/${this.state.email_}`)
+        .then((res)=>{Object.values(res.data).length !==0 ? this.setState({tab_user:res.data,pathh:'/user'},()=>this.props.get_id(this.state.tab_user._id)) 
+       :
+        axios.get(`/profile/${this.state.email_}`)
+        .then(res=>{Object.values(res.data).length !==0 ?this.setState({tab_admin:(res.data),pathh:'/admin1'}):this.setState({pathh: 'nnn'})},()=>this.props.get_id(this.state.tab_admin._id))
+        // if(this.state.tab_user.length !==0)  
+        //   this.setState({pathh:'/admin1'}) 
+        })
     }
   render() {
     return (

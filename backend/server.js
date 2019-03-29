@@ -114,6 +114,8 @@ app.put('/edituser/:id',(req,res)=>{
         res.send(data)
     })
 })
+// edit img user
+
 //delete user
 app.delete('/deleteuser/:id',(req,res)=>{
     let id=ObjectID(req.params.id)
@@ -123,8 +125,9 @@ app.delete('/deleteuser/:id',(req,res)=>{
     })
 })
 // get user for user interface
-app.get('/userlist',(req,res)=>{
-    db.collection('user').find().toArray((err,data)=>{
+app.get('/userlist/:id',(req,res)=>{
+    let id=ObjectID(req.params.id)
+    db.collection('user').findOne({_id:id},(err,data)=>{
         if (err) res.send('cant show list user')
         res.send(data)
     })
@@ -139,10 +142,26 @@ app.post('/reservedactivity',(req,res)=>{
     })
     
     })
-
-    app.get('/:id',(req, res) =>{
+    app.get('/reservedactivitylist',(req,res)=>{
         let id=ObjectID(req.params.id)
-        db.collection('user').findOne({_id:id},(err,data)=>{
+        db.collection('reservedactivity').find().toArray((err,data)=>{
+            if (err) res.send('cant show list user')
+            res.send(data)
+        })
+    })
+
+    app.get('/user/:email_',(req, res) =>{
+        let email1= req.params.email_
+        db.collection('user').findOne({email:email1},(err,data)=>{
+            if (err) res.send('error')
+            res.send(data);
+        })
+        
+    })
+
+    app.get('/profile/:email_',(req, res) =>{
+        let email1= req.params.email_
+        db.collection('profile').findOne({email:email1},(err,data)=>{
             if (err) res.send('error')
             res.send(data);
         })
@@ -150,6 +169,22 @@ app.post('/reservedactivity',(req,res)=>{
     })
         
 
+    app.get('/activ/:id',(req,res)=>{
+        let id=ObjectID(req.params.id)
+        db.collection('activities').findOne({_id:id},(err,data)=>{
+            if (err) res.send('cant show list user')
+            res.send(data)
+        })
+    
+    })
+    // delete reserv
+    app.delete('/deleteresev/:id',(req,res)=>{
+        let id=ObjectID(req.params.id)
+        db.collection('reservedactivity').findOneAndDelete({_id:id},(err,data)=>{
+            if (err) res.send('can not delete user')
+            else res.send(data)
+        })
+    })
 
 })
 
